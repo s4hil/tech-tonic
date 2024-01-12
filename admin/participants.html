@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin - Code Arena</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+</head>
+<body>
+    <div class="flex justify-content-center m-5">
+        <h2 class="text-center">Code Arena Participants</h2>
+        <table class="table table-bordered mt-2" id="table">
+            <thead>
+                <tr>
+                    <th>Team Name</th>
+                    <th>Participant</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                
+            </tbody>
+        </table>
+    </div>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../js/jquery.table2excel.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script>
+        
+        $(document).ready(()=>{
+
+                let output = "";
+
+                $.ajax({
+                    url: GET_ALL_TEAMS,
+                    method: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                        let x = data.data;
+                        if (data.status == false) {
+                            alert(data.msg);
+                        }
+                        else{
+                            for(let i = 0; i < x.length; i++){
+                                let a = x[i]['team'].team_id;
+                                console.log(a);
+                                output += `
+                                        <tr>
+                                            <td>${x[i]['team'].team_id}</td>
+                                            <td>
+                                                `+ x[i]['team'].members[0] +`<br><hr> 
+                                                `+ x[i]['team'].members[1] +`<br> <hr>
+                                                `+ x[i]['team'].members[2] +`<br> <hr>
+                                            </td>
+                                        </tr>
+                                    `;
+                            }
+                            $("#table-body").html(output);
+                            $(".member").slideUp();
+                        }
+                    },
+                    error: function () {
+                        console.log("req err");
+                    }
+                })
+
+        });
+
+        $("#show-members").click((e)=>{
+            $(".member").slideToggle();
+        });
+
+        $("#export").click(()=>{
+            $(".member").show();
+            $("#table").table2excel({
+                name: "Submissions",
+                filename: new Date()+" submissions.xls", // do include extension
+                preserveColors: false // set to true if you want background colors and font colors preserved
+            });
+        });
+
+    </script>
+</body>
+</html>

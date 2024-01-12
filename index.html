@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="title" content="Code Arena by CSE DSATM 2024">
+		<meta name="description" content="Code Arena, A 24-hour hackathon at DSATM, Bengaluru | 18-19 January 2024">
+		<meta name="author" content="DSATM">
+		<meta name="keywords" content="Code Arena, DSATM, Hackathon, Bengaluru">
+		<title>Code Arena 2024</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom fonts for this template -->
+		<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="css/grayscale.min.css" rel="stylesheet">
+		<link href="css/custom2.css" rel="stylesheet">
+		<link href="css/countdown.css" rel="stylesheet">
+
+		<link rel="shortcut icon" type="image/x-icon" href="img/algosphere-icon.png">
+
+
+		<style>
+			@media only screen and (max-width: 768px){
+			  .masthead{
+			    margin: 0;
+			    text-align: center;
+			    max-width: 100vw; 
+			    display: flex;
+			    justify-content: center;
+			    padding-left: 0;
+
+			  }
+			  .masthead .container{
+			  	padding: 0;
+			  }
+			  .masthead h3{
+			  	font-size: 1.5rem;
+			  }
+
+			  .masthead h4{
+			  	font-size: 1rem;
+			  }
+
+			  body, html{
+			  	overflow-x: hidden;
+			  }
+			}
+		</style>
+
+	</head>
+
+
+	<body id="page-top">
+
+		<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="border-bottom: 1px solid #c4c4c4;">
+			<div id="navbar-container" class="container">
+				<div id="navbar-top-menu">
+					<div class="d-flex align-items-center justify-content-between">
+						<a class="navbar-brand js-scroll-trigger" href="index.html">
+							<div class="title-icon"></div>
+						</a>
+						<button class="navbar-toggler nexa" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+							Menu &nbsp; <i class="fas fa-bars"></i>
+						</button>
+					</div>
+				</div>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul id="navbar-buttons" class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger nexa" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger nexa" href="brochure.pdf">Brochure</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger nexa" href="register.html">Register</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger nexa" href="getqr.html">Get QR</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<!-- <div id="particles-js"></div> -->
+
+		<div class="masthead">
+			<div class="container d-flex align-items-center">
+				<div class="mx-auto text-center no-select">
+					<div class="logo-container d-block m-2 algo-logo">
+						<img src="img/algosphere-logo.png" height="200px"><br><br>
+					</div>
+					<h3 class="text-primary">Department of CSE, DSATM</h3>
+					<h4 class="text-secondary">Presents</h4><br>
+					<div class="logo-container d-block m-2">
+						<img src="img/code-arena-logo.png" height="150px"><br><br>
+					</div>
+					<h1 class="mx-auto my-0 title-text">Code Arena</h1>
+					<br><br>
+					<div class="countdown" style="width: 100%; display: flex;justify-content: space-around;">
+						<section class="countdown-container text-white">
+							  <div class="days-container">
+							    <div class="days">0</div>
+							    <div class="days-label">days</div>
+							  </div>
+							  
+							  <div class="hours-container">
+							    <div class="hours">0</div>
+							    <div class="hours-label">hours</div>
+							  </div>
+							  
+							  <div class="minutes-container">
+							    <div class="minutes">0</div>
+							    <div class="minutes-label">minutes</div>
+							  </div>
+							  
+							  <div class="seconds-container">
+							    <div class="seconds">0</div>
+							    <div class="seconds-label">seconds</div>
+							  </div>
+						</section>
+					</div><br><br>
+					<div id="button-box">
+						<a class="btn btn-primary bg-secondary" href="brochure.pdf">Brochure</a>
+						<a href="register.html" class="btn btn-primary js-scroll-trigger" style="z-index: 1; position: relative;">Register</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<section class="text-center">
+			<section>
+				<h1 class="sub-heading diagonal-text orange sub-heading-title">About</h1>
+			</section>
+			
+			<section class="diagonal-section white-bg">
+			
+				<div class="mx-auto diagonal-section-content">
+					<div class="container nexa text-justify">
+						<p class="black bold">Get ready for an exciting and challenging 24-hour hackathon event! Code Arena brings together college students from all over to compete in four domains: App/web development, IOT-based projects, Gaming related challenges and Cyber Security. Participate for a chance to have fun, gain knowledge, and win amazing prizes!
+						</br></br>
+						</p><p class="text-center">To participate register online, Limited slots available. 
+						</p>
+					</div>
+				</div>
+				
+			</section>
+
+			<section>
+				<h1 class="sub-heading diagonal-text orange sub-heading-title" style="padding-bottom: 100px; padding-top: 100px; margin-bottom: 0;">Themes</h1>
+			</section>
+			<section class="diagonal-section white-bg">
+					<div class="mx-auto diagonal-section-content">
+						<div class="container">
+							<div class="border-box">
+								<div class="row justify-content-center no-gutters mb-5 mb-lg-0 workshop-item">
+									<div class="col-lg-6 workshop-item-image">
+										<img class="img-fluid" src="img/cards/webdev.png" alt="">
+									</div>
+									<div class="col-lg-6 workshop-item-textbox">
+										<div class="bg-black text-center h-100 project">
+											<div class="d-flex h-100">
+												<div class="project-text w-100 my-auto text-center text-lg-left">
+													<h4 class="sub-heading inline orange">Dev<a class="white">Fest</a></h4>
+													<p class="mb-0 white nexa">
+														Embark on a coding adventure where you can craft captivating web applications, showcase your talent, and connect with like-minded individuals. This competition isn't just about coding; it's about turning your innovative ideas into reality.
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="border-box">
+								<div class="row justify-content-center no-gutters mb-5 mb-lg-0 workshop-item">
+									<div class="col-lg-6 workshop-item-image">
+										<img class="img-fluid" src="img/cards/iot.jpg" alt="">
+									</div>
+									<div class="col-lg-6 order-lg-first workshop-item-textbox">
+										<div class="bg-black text-center h-100 project">
+											<div class="d-flex h-100">
+												<div class="project-text w-100 my-auto text-center text-lg-right">
+													<h4 class="sub-heading inline orange nexa">IoT <a class="white">
+														Nexus
+													</a></h4>
+													<p class="mb-0 white nexa">
+														Dive into the thrilling realm of the Internet of Things (IoT) competition, where creativity meets connectivity. Imagine transforming everyday objects into smart solutions that revolutionize the way we live. This is your chance to pioneer the future, creating innovative IoT solutions that transcend boundaries.
+													</p>
+													<hr class="d-none d-lg-block mb-0 mr-0">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="border-box">
+								<div class="row justify-content-center no-gutters mb-5 mb-lg-0 workshop-item">
+									<div class="col-lg-6 workshop-item-image">
+										<img class="img-fluid" src="img/cards/gamedevelopment.jpg" alt="">
+									</div>
+									<div class="col-lg-6 workshop-item-textbox">
+										<div class="bg-black text-center h-100 project">
+											<div class="d-flex h-100">
+												<div class="project-text w-100 my-auto text-center text-lg-left">
+													<h4 class="sub-heading inline orange">Gamejam <a class="white">Galaxy</a></h4>
+													<p class="mb-0 white nexa">
+														Dive into the thrilling world of competition, where creativity meets technology in an electrifying dance of pixels and code. Unleash your imagination, craft captivating virtual worlds, and challenge yourself to bring your gaming vision to life.
+													</p>
+													<hr class="d-none d-lg-block mb-0 ml-0">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="row justify-content-center no-gutters workshop-item">
+									<div class="col-lg-6 workshop-item-image">
+										<img class="img-fluid" src="img/cards/cybersecurity.jpg" alt="">
+									</div>
+									<div class="col-lg-6 order-lg-first workshop-item-textbox">
+										<div class="bg-black text-center h-100 project">
+											<div class="d-flex h-100">
+												<div class="project-text w-100 my-auto text-center text-lg-right">
+													<h4 class="sub-heading inline orange">Cyber <a class="white">Security</a></h4>
+													<p class="mb-0 white nexa">
+														Cybersecurity competitions are the modern battlegrounds for those passionate about protecting the integrity of the digital landscape. It's a place where quick thinking, strategic prowess, and technical mastery collide to thwart cyber threats. Join this high-stakes adventure, where you'll unravel intricate scenarios, defend against simulated attacks, and emerge not just as a competitor but as a guardian of the virtual frontier.
+													</p>
+													<hr class="d-none d-lg-block mb-0 mr-0">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+			</section>
+			
+
+			<section>
+				<h1 class="sub-heading diagonal-text orange sub-heading-title" style="padding-bottom: 100px; padding-top: 100px; margin-bottom: 0;">Schedule</h1>
+			</section>
+			<section class="diagonal-section white-bg">
+					<div class="mx-auto diagonal-section-content">
+						<div class="schedule">
+							<div id="schedSat">
+								<h3 style="font-weight: bold;">Thursday 18th</h3>
+								<br>
+								<table class="table table-hover" id="">
+									<thead>
+										<tr>
+											<th>Time</th>
+											<th>Activity</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>9:30 AM</td>
+											<td>Inaguration Ceremony</td>
+										</tr>
+										<tr>
+											<td>11:00 AM</td>
+											<td>Let the coding begin + Drinks</td>
+										</tr>
+										<tr>
+											<td>1:00 PM</td>
+											<td>Lunch</td>
+										</tr>
+										<tr>
+											<td>5:00 PM</td>
+											<td>Snacks</td>
+										</tr>
+										<tr>
+											<td>9:00 PM</td>
+											<td>Dinner</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div id="schedSun">
+								<h3 style="font-weight: bold;">Friday 19th</h3>
+								<br>
+								<table class="table table-hover" id="">
+									<thead>
+										<tr>
+											<th>Time</th>
+											<th>Activity</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1:00 AM</td>
+											<td>Tea Break</td>
+										</tr>
+										<tr>
+											<td>4:30 AM</td>
+											<td>Tea Break</td>
+										</tr>
+										<tr>
+											<td>8:30 AM</td>
+											<td>Breakfast</td>
+										</tr>
+										<tr>
+											<td>11:00 AM</td>
+											<td>Submission</td>
+										</tr>
+										<tr>
+											<td>3:00 PM</td>
+											<td>Prize Distribution</td>
+										</tr>
+										<tr>
+											<td>00:00 PM</td>
+											<td>Ciao</td>
+										</tr>
+									</tbody>
+								</table>
+	
+							</div>
+						</div>
+					</div>
+					
+			</section>
+			
+
+
+			<section>
+				<h1 class="sub-heading diagonal-text orange sub-heading-title" style="padding-bottom: 100px; padding-top: 100px; margin-bottom: 0;">Rules &amp; Regulations</h1>
+			</section>
+			<section class="diagonal-section white-bg pt-5 pb-5 row">
+					<div class="mx-auto diagonal-section-content col-lg-8 col-10" style="text-align: left;">
+						<ul class="rules-list">
+							<li>
+								<b>Reporting Time:</b> All participants must arrive at the venue one hour before their allocated time on the event day(8:30am).
+							</li>
+							<li>
+								<b>Event Duration:</b> Code Arena is a 24-hour event starting from 11 AM on Day 1 to 11 AM on Day 2.
+							</li>
+							<li>
+								<b>Meals:</b> Lunch and Dinner will be provided on Day 1, and breakfast will be provided on Day 2. Snacks will also be provided.
+							</li>
+							<li>
+								<b>Essential:</b> Participants must carry their college ID cards, Laptops and all the required  hardware parts must be brought by the team only, organizers will not be liable to provide it. 
+							</li>
+							<li>
+								<b>Theme:</b> The Hackathon has various domains, allowing participants to work on any project idea they choose. Note : The participants registered for Web and App Development will be working on the given  problem statements 
+
+							</li>
+							<li>
+								<b>Accommodation:</b> All participants must stay in campus, and accommodation facilities will be provided for the night.
+							</li>
+							<li>
+								<b>Certificate:</b> E-certificates will be issued to all participants as acknowledgment of their participation.
+							</li>
+							<li>
+								<b>Registration Fee:</b> The registration fee is non-refundable and depends on the event.
+							</li>
+							<li>
+								<b>Team Size:</b> Teams can have 2-3 members. No members can be added/removed from the team. Team should be the same as during the sumbission done before.
+							</li>
+							<li>
+								<b>Code of Conduct:</b> Participants must maintain professionalism and ethical behavior. Cheating, plagiarism, or any unethical practices will lead to immediate disqualification.
+							</li>
+							<li>
+								<b>Completion:</b> Projects must be completed within the given time frame.
+							</li>
+							<li>
+								<b>Collaboration:</b> Teams must work independently, collaboration with other teams is not allowed.
+							</li>
+							<li>
+								<b>Judging Criteria:</b> The judging criteria, including innovation, technicality, usability, and presentations, will be communicated to participants before the judging process.
+							</li>
+							<li>
+								<b>Organizers Decision:</b> The decisions made by the organizers and judges will be final and binding.
+							</li>
+							<li>
+								<b>Code Usage:</b> Teams can use libraries, frameworks, or open source code, but using pre-existing projects solely for the purpose of the event is not allowed.
+							</li>
+							<li>
+								<b>Malpractice:</b> Participants are encouraged to report any malpractice to the judges for fair evaluation.
+							</li>
+						</ul>
+					</div>
+			</section>
+			
+
+			<section>
+				<h1 class="sub-heading diagonal-text orange sub-heading-title" style="padding-bottom: 1rem; padding-top: 100px; margin-bottom: 0;">Team</h1>
+			</section>
+			<section class="diagonal-section vertical-padding" style="opacity: 0.95!important;">
+			
+				<div class="mx-auto diagonal-section-content">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-4">
+								<div class="team-card">
+									<div class="team-image">
+										<img class="team-image img-fluid" src="img/team/dhanush.jpg">
+									</div>
+									<div class="team-textbox">
+										<h3 class="team-name nexa orange">Dhanush Gupta</h3>
+										<h5 class="nexa blue">Budget Handling</h5>
+										<div class="team-social accessible">
+											<a class="social-button orange-hover" href="https://www.linkedin.com/in/dhanush-gupta-b22b84232">
+												<i class="fab fa-linkedin"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-4">
+								<div class="team-card">
+									<div class="team-image">
+										<img class="team-image img-fluid" src="img/team/sanjana.jpg">
+									</div>
+									<div class="team-textbox">
+										<h3 class="team-name nexa orange">Sanjana NP</h3>
+										<h5 class="nexa blue">Creative Team</h5>
+										<div class="team-social accessible">
+											<a class="social-button orange-hover" href="www.linkedin.com/in/sanjana-np">
+												<i class="fab fa-linkedin"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-4">
+								<div class="team-card">
+									<div class="team-image">
+										<img class="team-image img-fluid" src="img/team/sahil.jpg">
+									</div>
+									<div class="team-textbox">
+										<h3 class="team-name nexa orange">Sahil Showkat</h3>
+										<h5 class="nexa blue">Lead Developer</h5>
+										<div class="team-social accessible">
+											<a class="social-button orange-hover" href="https://www.linkedin.com/in/sahil-parray">
+												<i class="fab fa-linkedin"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xl-4">
+								<div class="team-card">
+									<div class="team-image">
+										<img class="team-image img-fluid" src="img/team/srilakshmi.jpg">
+									</div>
+									<div class="team-textbox">
+										<h3 class="team-name nexa orange">Srilakshmi B S</h3>
+										<h5 class="nexa blue">Tech Team</h5>
+										<div class="team-social accessible">
+											<a class="social-button orange-hover" href="https://www.linkedin.com/in/srilakshmi-b-s-885229266">
+												<i class="fab fa-linkedin"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-4">
+								<div class="team-card">
+									<div class="team-image">
+										<img class="team-image img-fluid" src="img/team/saathvick.jpg">
+									</div>
+									<div class="team-textbox">
+										<h3 class="team-name nexa orange">Saathvick Adike</h3>
+										<h5 class="nexa blue">Volunteer Handling</h5>
+										<div class="team-social accessible">
+											<a class="social-button orange-hover" href="https://www.linkedin.com/in/saathvick-sharadhan-adike-8b96a829a">
+												<i class="fab fa-linkedin"></i>
+											</a>
+											<a class="social-button orange-hover" title="Opens email application. Please be patient while it loads." href="mailto:john.smith@gmail.com?subject=Inquiry&body=Hi Wassim! I found your contact on the CreatED Website.">
+												<i class="fas fa-envelope"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-4">
+								<div class="team-card">
+									<div class="team-image">
+										<img class="team-image img-fluid" src="img/team/Annabel.png">
+									</div>
+									<div class="team-textbox">
+										<h3 class="team-name nexa orange">Vijay Surpith</h3>
+										<h5 class="nexa blue">Marketing Team</h5>
+										<div class="team-social accessible">
+											<a class="social-button orange-hover" href="https://www.linkedin.com/in/vijay-suprith-s-0025a7232">
+												<i class="fab fa-linkedin"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</section>
+			
+			<section class="diagonal-section white-bg">
+			
+				<div class="mx-auto diagonal-section-content">
+					
+				</div>
+				
+			</section>
+			
+			<section class="diagonal-section black-bg" style="height: 4em; opacity: 1;"></section>
+			
+			<section class="footer-section black-bg">
+			
+				<div style="padding-top: 0">
+					<div class="small text-center white">
+						<div class="social d-flex justify-content-center"></div>
+						<div class="mt-3 row d-flex justify-content-center">
+							<div class="col-12 col-lg-6">
+								<div class="mb-4 nexa orange-hover orange">
+									Contact us:
+								</div>
+								<ul style="list-style-type: none; margin: 0; padding: 0;">
+									<li>Sandeep Reddy (7702922128)</li>
+									<li>Vijay Suprith (9345652156)</li>
+									<li>Dhanush Gupta (6360855805)</li>
+									<li></li>
+								</ul>
+							</div>
+							<div class="col-12 col-lg-6 copyrights-col">
+								<div class="white mb-4 nexa">
+									Made with <i class="fas fa-heart"></i> by <a href="https://s4hil.github.io">Sahil Showkat</a>
+								</div>
+								<a href="https://github.com/s4hil" class="mx-2 orange-hover">
+								  <i class="fab fa-github"></i>
+								</a>
+								<a href="https://www.linkedin.com/en/sahil-parray" class="mx-2 orange-hover">
+									<i class="fab fa-linkedin"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</section>
+			
+		</section>
+
+		<!-- Bootstrap core JavaScript -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+		<!-- Plugin JavaScript -->
+		<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+		<!-- Custom scripts for this template -->
+		<script src="js/grayscale.js"></script>
+
+		<!-- Custom javascript -->
+		<script src="js/custom.js"></script>
+
+		<!-- Particle library
+		<script src="particles/particles.js"></script>
+		<script src="particles/app.js"></script> -->
+
+		<script>
+
+			setInterval(function () {
+				let endDate = new Date("18 January 2024 9:30 AM");
+				let now = new Date();
+
+				let diff = (endDate - now) / 1000;
+				let days = Math.floor(diff / 3600 / 24);
+				let hours = Math.floor(diff / 3600) % 24;
+				let mins = Math.floor(diff / 60) % 60;
+				let secs = Math.floor(diff) % 60;
+
+				const d = document;
+				const daysElement = d.querySelector('.days');
+				const hoursElement = d.querySelector('.hours');
+				const minutesElement = d.querySelector('.minutes');
+				const secondsElement = d.querySelector('.seconds');
+
+
+				daysElement.textContent = days;
+				hoursElement.textContent = hours;
+				minutesElement.textContent = mins;
+				secondsElement.textContent = secs;
+			}, 1000);
+
+		</script>
+
+	</body>
+
+</html>
