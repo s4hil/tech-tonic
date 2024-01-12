@@ -5,11 +5,11 @@
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<meta name="title" content="Code Arena by CSE DSATM 2024">
-		<meta name="description" content="Code Arena, A 24-hour hackathon at DSATM, Bengaluru | 18-19 January 2024">
+		<meta name="title" content="Tech Tonic by CSE DSATM 2024">
+		<meta name="description" content="Tech Tonic, A 24-hour hackathon at DSATM, Bengaluru | 18-19 January 2024">
 		<meta name="author" content="DSATM">
-		<meta name="keywords" content="Code Arena, DSATM, Hackathon, Bengaluru">
-		<title>Code Arena 2024</title>
+		<meta name="keywords" content="Tech Tonic, DSATM, Hackathon, Bengaluru">
+		<title>Tech Tonic 2024</title>
 
 		<!-- Bootstrap core CSS -->
 		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -99,41 +99,34 @@
 				                            </div><!-- col-6 -->
 
 				                            <div class="form-group">
-				                            	<label>Semester</label>
-				                                <select id="semester" name="semester" class="form-control">
-				                                    <option value="">Select</option>
-				                                    <option value="1">1</option>
-				                                    <option value="2">2</option>
-				                                    <option value="3">3</option>
-				                                    <option value="4">4</option>
-				                                    <option value="5">5</option>
-				                                    <option value="6">6</option>
-				                                    <option value="7">7</option>
-				                                    <option value="8">8</option>
-				                                </select>
-				                            </div>
-
-				                            <div class="form-group">
 				                            	<label>College Name</label>
 				                                <input class="form-control" name="collegeName" type="text" of college" id="college-name">
 				                            </div>
 
-
 				                            <div class="form-group">
-				                            	<label>Member Name - 1</label>
-				                                <input class="form-control" name="member-1-name" type="text" id="member-1-name">
+				                            	<label>Event</label>
+				                                <select id="events" name="event" class="form-control">
+				                                    <option value="">Select</option>
+				                                    <option value="Code Arena">Code Arena (Hackathon)</option>
+				                                    <option value="Idea X">Idea X (Ideathon)</option>
+				                                    <option value="CodifyFix">CodifyFix (Debugging)</option>
+				                                    <option value="PerSpecta">PerSpecta (Debate)</option>
+				                                    <option value="Trivia Quizzix">Trivia Quizzix (Quiz)</option>
+				                                    <option value="Artify">Artify (Digital Art)</option>
+				                                    <option value="Vision Xpo">Vision Xpo (Startup Expo)</option>
+				                                    <option value="Robo Race">Robo Race (Robotics)</option>
+				                                    <option value="Gaming">Gaming</option>
+				                                    <option value="Trading">Trading</option>
+				                                    <option value="Startup Expo">Startup Expo</option>
+				                                </select>
 				                            </div>
-				                            <div class="form-group">
-				                            	<label>Member Mobile - 1</label>
-				                                <input class="form-control" name="member-1-mobile" type="text"  id="member-1-mobile">
-				                            </div>
-				                            <div class="form-group">
-				                            	<label>Member USN - 1</label>
-				                                <input class="form-control" name="member-1-usn" type="text" id="member-1-usn">
-				                            </div>
 
 
-				                            <div class="form-group">
+				                            <div class="member-box">
+					                            
+					                        </div>
+
+				                            <!-- <div class="form-group">
 				                            	<label>Member Name - 2</label>
 				                                <input class="form-control" name="member-2-name" type="text"id="member-2-name">
 				                            </div>
@@ -159,8 +152,9 @@
 				                            <div class="form-group">
 				                            	<label>Member USN - 3</label>
 				                                <input class="form-control" name="member-3-usn" type="text" id="member-3-usn">
-				                            </div>
-				                            <div class="form-group">
+				                            </div> -->
+
+				                            <div class="form-group" style="display: none;" id="code-arena-domain">
 				                            	<label>Domain</label>
 				                                <select class="form-control" id="domain" name="domain">
 				                                    <option value="">Select</option>
@@ -341,6 +335,37 @@
 	                });
 	            }
 
+	        })
+
+	        $("#events").on('change', function () {
+	        	let op = "";
+	        	let x = $(this).val();
+	        	let index = team_sizes.findIndex(item => item.name == x);
+	        	let size = team_sizes[index].size;
+	        	let name = team_sizes[index].name;
+
+	        	for(let i = 0; i < size; i++){
+	        		let num = i+1;
+	        		op += `
+	        			<div class="form-group">
+                        	<label>Member Name - ${num}</label>
+                            <input class="form-control" name="member-${num}-name" type="text" id="member-${num}-name">
+                        </div>
+                        <div class="form-group">
+                        	<label>Member Mobile - ${num}</label>
+                            <input class="form-control" name="member-${num}-mobile" type="text"  id="member-${num}-mobile">
+                        </div>
+                        <div class="form-group">
+                        	<label>Member USN - ${num}</label>
+                            <input class="form-control" name="member-${num}-usn" type="text" id="member-${num}-usn">
+                        </div>
+	        		`;
+	        	}
+	        	console.log(op);
+	        	$(".member-box").html(op);
+	        	if (name == "Code Arena") {
+	        		$("#code-arena-domain").show();
+	        	}
 	        })
 		</script>
 
