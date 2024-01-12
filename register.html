@@ -168,7 +168,7 @@
 				                            <div class="form-group mb-2">
 				                                	<div class="d-flex justify-content-between mb-2">
 				                                		<label>Payment Screenshot</label>
-				                                		<button id="showUPI" class="btn btn-success pt-1 pb-1 pl-2 pr-2">Show UPI</button>
+				                                		<button id="showUPI" class="btn btn-success pt-1 pb-1 pl-2 pr-2">Show UPI QR</button>
 				                                	</div>
 				                                	<div id="upi-info">
 				                                		<p>150 per person</p>
@@ -317,6 +317,7 @@
 	                    processData: false,
 	                    cache: false,
 	                    beforeSend: function () {
+	                    	console.log(a);
 	                        $("#submitForm").prop('disabled', true);
 	                        $("#register-form").css('opacity', '0.5');
 	                    },
@@ -328,8 +329,8 @@
 	                        alert(x.msg+" Get QR now");
 	                        window.location.href = "getqr.html";
 	                    },
-	                    error: function () {
-	                        console.log("err wd req");
+	                    error: function (s) {
+	                        console.log(s.responseText);
 	                    }
 
 	                });
@@ -361,7 +362,6 @@
                         </div>
 	        		`;
 	        	}
-	        	console.log(op);
 	        	$(".member-box").html(op);
 	        	if (name == "Code Arena") {
 	        		$("#code-arena-domain").show();
