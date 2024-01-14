@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin - Code Arena</title>
+    <title>Admin - Tech Tonic</title>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 </head>
 <body>
     <div class="flex justify-content-center m-5">
         <h2 class="alert alert-info text-center">Submissions</h2>
         <button class="btn btn-primary" id="export">Export as Excel</button>
-        <button class="btn btn-success" id="show-members">Show/Hide Members</button>
+        <button class="btn btn-success" id="show-members">Show/Hide All data</button>
         <table class="table table-striped mt-2" id="table">
             <thead>
                 <tr class="bg-dark text-white">
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th class="member">Semester</th>
                     <th>College</th>
-                    <th class="member">Member 1</th>
-                    <th class="member">Member 2</th>
-                    <th class="member">Member 3</th>
-                    <th>Domain</th>
+                    <th class="hidden">Member 1</th>
+                    <th class="hidden">Member 2</th>
+                    <th class="hidden">Member 3</th>
+                    <th class="hidden">Member 4</th>
+                    <th>Event</th>
                     <th>Payment</th>
                     <th>Action</th>
                 </tr>
@@ -59,12 +59,12 @@
                                             <td>${x[i].id}</td>
                                             <td>${x[i].team_name}</td>
                                             <td>${x[i].email}</td>
-                                            <td class='member'>${x[i].sem}</td>
                                             <td>${x[i].college_name}</td>
-                                            <td class='member'>${x[i].member1}</td>
-                                            <td class='member'>${x[i].member2}</td>
-                                            <td class='member'>${x[i].member3}</td>
-                                            <td>${x[i].domain}</td>
+                                            <td class='hidden'>${x[i].member1}</td>
+                                            <td class='hidden'>${x[i].member2}</td>
+                                            <td class='hidden'>${x[i].member3}</td>
+                                            <td class='hidden'>${x[i].member4}</td>
+                                            <td>${x[i].event}</td>
                                             <td>
                                                 <a target='_blank' class='btn btn-warning' href="`+ UPLOAD_DIR +`${x[i].payment_sc}">View</a>
                                             </td>
@@ -75,7 +75,7 @@
                                     `;
                             }
                             $("#table-body").html(output);
-                            $(".member").slideUp();
+                            $(".hidden").slideUp();
                         }
                     },
                     error: function () {
@@ -86,38 +86,41 @@
         });
 
         $("#show-members").click((e)=>{
-            $(".member").slideToggle();
+            $(".hidden").slideToggle();
         });
 
         $("#export").click(()=>{
-            $(".member").show();
+            $(".hidden").show();
             $("#table").table2excel({
                 name: "Submissions",
                 filename: new Date()+" submissions.xls", // do include extension
                 preserveColors: false // set to true if you want background colors and font colors preserved
             });
+            $(".hidden").hide();
         });
 
         $("#table-body").on('click', '.del-sub', function() {
             let email = $(this).attr('email-id');
             let myThis = this;
 
-            $.ajax({
-                url: DEL_SUBMISSION_URL,
-                method: "POST",
-                data: JSON.stringify({email: email}),
-                dataType: "json",
-                success: function (data) {
-                    console.log(data);
-                    if (data.status == true) {
-                        $(myThis).closest('tr').fadeOut();
-                        alert(data.msg);
+            if (confirm("Are you sure?") == true) {
+                $.ajax({
+                    url: DEL_SUBMISSION_URL,
+                    method: "POST",
+                    data: JSON.stringify({email: email}),
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                        if (data.status == true) {
+                            $(myThis).closest('tr').fadeOut();
+                            alert(data.msg);
+                        }
+                    },
+                    error: function () {
+                        console.log("req err");
                     }
-                },
-                error: function () {
-                    console.log("req err");
-                }
-            })
+                })
+            }
         })
     </script>
 </body>

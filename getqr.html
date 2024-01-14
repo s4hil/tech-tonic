@@ -5,11 +5,11 @@
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<meta name="title" content="Code Arena by CSE DSATM 2024">
-		<meta name="description" content="Code Arena, A 24-hour hackathon at DSATM, Bengaluru | 18-19 January 2024">
+		<meta name="title" content="Tech Tonic by CSE DSATM 2024">
+		<meta name="description" content="Tech Tonic, A 24-hour hackathon at DSATM, Bengaluru | 18-19 January 2024">
 		<meta name="author" content="DSATM">
-		<meta name="keywords" content="Code Arena, DSATM, Hackathon, Bengaluru">
-		<title>Code Arena 2024</title>
+		<meta name="keywords" content="Tech Tonic, DSATM, Hackathon, Bengaluru">
+		<title>Tech Tonic 2024</title>
 
 		<!-- Bootstrap core CSS -->
 		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -168,11 +168,11 @@
 	                    }
 	                    else{
 	                        let x = data.data;
-	                        let members = x.member1.split('-')[0] +", "+x.member2.split('-')[0] +", "+x.member3.split('-')[0];
-	                        console.log(members);
-	                        let teamNumber = "Team_"+x.id;
-	                        const qrData = {team_number:teamNumber, team_name:x.team_name, participants:members, domain: x.domain};
-	                        console.log(qrData);
+	                        let teamNumber = x.team_id;
+	                        let teamName = x.team_name;
+	                        let event = x.event;
+	                        let members = x.members;
+	                        const qrData = {team_number:teamNumber, team_name:teamName, participants:members, event:event};
 	                        new QRCode(document.getElementById("qr-code"), JSON.stringify(qrData));
 	                        $("#alert").text("Hold and save the image!");
 	                    }
