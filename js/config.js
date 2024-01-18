@@ -8,6 +8,7 @@ var GET_SUBMISSIONS_URL = BASE_URL+"getData.php";
 var DEL_SUBMISSION_URL = BASE_URL+"delSubmission.php";
 var GET_ALL_PARTICIPANTS = BASE_URL+"getAllParticipants.php";
 var GET_ALL_TEAMS = BASE_URL+"getAllTeams.php";
+var GET_SLOT_DATA = BASE_URL+"getSlotStats.php";
 
 var team_sizes = [
 	{ "name": "Code Arena", "size": 4 },

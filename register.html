@@ -110,14 +110,14 @@
 				                                    <option value="Code Arena">Code Arena (Hackathon)</option>
 				                                    <option value="Idea X">Idea X (Ideathon)</option>
 				                                    <option value="CodifyFix">CodifyFix (Debugging)</option>
-				                                    <option value="PerSpecta">PerSpecta (Debate)</option>
 				                                    <option value="Trivia Quizzix">Trivia Quizzix (Quiz)</option>
-				                                    <option value="Artify">Artify (Digital Art)</option>
 				                                    <option value="Vision Xpo">Vision Xpo (Startup Expo)</option>
-				                                    <option value="Robo Race">Robo Race (Robotics)</option>
+				                                    <option value="PerSpecta">PerSpecta (Debate)</option>
 				                                    <option value="Gaming">Gaming</option>
+				                                    <option value="Artify">Artify (Digital Art)</option>
+				                                    <option value="Artify">Project Expo</option>
+				                                    <option value="Robo Race">Robo Race (Robotics)</option>
 				                                    <option value="Trading">Trading</option>
-				                                    <option value="Startup Expo">Startup Expo</option>
 				                                </select>
 				                            </div>
 
@@ -325,8 +325,14 @@
 	                        $("#submitForm").prop('disabled', false);
 	                        $("#register-form").css('opacity', '1');
 	                        $("#register-form")[0].reset();
-	                        alert(x.msg+" Get QR now");
-	                        window.location.href = "getqr.html";
+
+							if (x.status == false) {
+								alert(x.msg);
+							}
+							else{
+								alert("Get QR Now!");
+								window.location.href = "getqr.html";
+							}           
 	                    },
 	                    error: function (s) {
 	                        console.log(s.responseText);
