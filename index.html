@@ -35,6 +35,11 @@
 			.workshop-item {
 				margin-top: 3rem;
 			}
+
+			.header-text {
+				font-family: system-ui;
+			}
+
 			@media only screen and (max-width: 768px){
 			  .masthead{
 			    margin: 0;
@@ -77,10 +82,11 @@
 			  .desktop {
 			  	display: none;
 			  }
+			  .badges{
+			  	display: flex;
+			  	justify-content: center;
+			  }
 			}
-
-
-
 		</style>
 
 	</head>
@@ -92,19 +98,19 @@
 			<div id="navbar-container" class="container">
 				<div id="navbar-top-menu">
 					<div class="d-flex align-items-center justify-content-between">
-						<a class="navbar-brand js-scroll-trigger" href="index.html">
 							<header class="d-flex">
-								<div class="title-icon"></div>
+								<a class="navbar-brand js-scroll-trigger" href="index.html">
+									<div class="title-icon"></div>
+								</a>
 								<div class="ml-2 header-text desktop text-left">
+									<h1><span class="white">Dayananda</span> <span class="orange">Sagar</span></h1>
+									<h6 class="text-secondary">Academy of Technology and Management</h6>
+								</div>
+								<div class="ml-2 header-text mobile text-left">
 									<h1>Dayananda Sagar</h1>
 									<h6>Academy of Technology and Management</h6>
 								</div>
-								<div class="ml-2 header-text mobile text-left">
-									<h1>Datananda Sagar</h1>
-									<h6>Academy of Technology and Management</h6>
-								</div>
 							</header>
-						</a>
 						<button style="margin-right: -1rem;" class="navbar-toggler nexa" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 						 <i class="fas fa-bars"></i>
 						</button>
@@ -861,7 +867,7 @@
 
 
 
-						let stats = "<div class='container-fluid badges mt-2'><div class='badge badge-primary mr-1'>Slots Left: "+z+"</div><div class='badge badge-success'>Reg. Fee: "+ x[i].Fee +"</div></div>";
+						let stats = "<div class='badges container-fluid badges mt-2'><div class='badge badge-primary mr-1'>Slots Left: "+z+"</div><div class='badge badge-success'>Reg. Fee: "+ x[i].Fee +"</div></div>";
 						console.log(stats);
 
 						$(".cards-holder").children().eq(i).find('p').append(stats);
