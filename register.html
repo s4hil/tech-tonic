@@ -113,7 +113,8 @@
 				                                    <option value="Trivia Quizzix">Trivia Quizzix (Quiz)</option>
 				                                    <option value="Vision Xpo">Vision Xpo (Startup Expo)</option>
 				                                    <option value="PerSpecta">PerSpecta (Debate)</option>
-				                                    <option value="Gaming">Gaming</option>
+				                                    <option value="Gaming (FreeFire)">Gaming (FreeFire)</option>
+				                                    <option value="Gaming (BGMI)">Gaming (BGMI)</option>
 				                                    <option value="Artify">Artify (Digital Art)</option>
 				                                    <option value="Artify">Project Expo</option>
 				                                    <option value="Robo Race">Robo Race (Robotics)</option>
@@ -172,7 +173,7 @@
 				                                	</div>
 				                                	<div id="upi-info">
 				                                		<p>150 per person</p>
-				                                		<img src="img/upi-info.png">
+				                                		<img src="img/qrpayment.jpg" width="100%">
 				                                	</div><br>
 				                                    <input class="form-control" type="file" id="sc" value="" name="sc">
 				                            </div>
@@ -354,15 +355,15 @@
 	        		let num = i+1;
 	        		op += `
 	        			<div class="form-group">
-                        	<label>Member Name - ${num}</label>
+                        	<label id='leader-name-label'>Member Name - ${num}</label>
                             <input class="form-control" name="member-${num}-name" type="text" id="member-${num}-name">
                         </div>
                         <div class="form-group">
-                        	<label>Member Mobile - ${num}</label>
+                        	<label id='leader-mobile-label'>Member Mobile - ${num}</label>
                             <input class="form-control" name="member-${num}-mobile" type="text"  id="member-${num}-mobile">
                         </div>
                         <div class="form-group">
-                        	<label>Member USN - ${num}</label>
+                        	<label id='leader-usn-label'>Member USN - ${num}</label>
                             <input class="form-control" name="member-${num}-usn" type="text" id="member-${num}-usn">
                         </div>
 	        		`;
@@ -370,6 +371,11 @@
 	        	$(".member-box").html(op);
 	        	if (name == "Code Arena") {
 	        		$("#code-arena-domain").show();
+	        	}
+	        	if (name == "Gaming (BGMI)" || name == "Gaming (FreeFire)") {
+	        		$("#leader-name-label").text("Leader Name");
+	        		$("#leader-mobile-label").text("Leader WhatsApp Number");
+	        		$("#leader-usn-label").text("Leader USN Number");
 	        	}
 	        })
 		</script>
