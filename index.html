@@ -2,11 +2,20 @@
 <html lang="en">
 
 	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL6S8F2T8P"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-EL6S8F2T8P');
+		</script>
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<meta name="title" content="Tech Tonic by CSE DSATM 2024">
-		<meta name="description" content="Tech Tonic, A 24-hour hackathon at DSATM, Bengaluru | 18-19 January 2024">
+		<meta name="description" content="It's an immersive experience designed to ignite the spark of curiosity, foster innovation, and celebrate the dynamic world of technology.">
 		<meta name="author" content="DSATM">
 		<meta name="keywords" content="Tech Tonic, DSATM, Hackathon, Bengaluru">
 		<title>Tech Tonic 2024</title>
@@ -20,9 +29,11 @@
 		<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
 		<!-- Custom styles for this template -->
+		<link href="css/loader.css" rel="stylesheet">
 		<link href="css/grayscale.min.css" rel="stylesheet">
 		<link href="css/custom2.css" rel="stylesheet">
 		<link href="css/countdown.css" rel="stylesheet">
+		<link href="css/aos.css" rel="stylesheet">
 
 		<link rel="shortcut icon" type="image/x-icon" href="img/algosphere-icon.png">
 
@@ -87,11 +98,31 @@
 			  	display: flex;
 			  	justify-content: center;
 			  }
+			  .team-textbox * {
+				font-size: .5rem;
+			}
+			}
+
+			.team-textbox * {
+				font-size: .7rem;
+			}
+			.loader-container {
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: fixed;
+				z-index: 99999;
+				margin: 0;
+				padding: 0;
 			}
 		</style>
 
 	</head>
-
+	<div class="loader-container bg-dark">
+		<div class="loader"></div>
+	</div>
 
 	<body id="page-top">
 
@@ -144,7 +175,7 @@
 					<div class="logo-container d-block m-2 algo-logo">
 						<img src="img/algosphere-logo.png" height="200px"><br><br>
 					</div>
-					<!-- <h3 class="text-primary"></h3> -->
+					<h3 class="text-primary">Department of CSE, DSATM</h3>
 					<h4 class="text-secondary">Presents</h4><br>
 					<div class="logo-container d-block m-2">
 						<!-- <img src="img/code-arena-logo.png" height="150px"><br><br> -->
@@ -207,7 +238,7 @@
 					<div class="mx-auto diagonal-section-content">
 						<div class="container cards-holder">
 
-							<div class="border-box">
+							<div class="border-box" data-aos="fade-up">
 								<div class="row justify-content-center no-gutters mb-5 mb-lg-0 workshop-item">
 									<div class="col-lg-6 workshop-item-image">
 										<img class="img-fluid" src="img/cards/webdev.jpg" alt="">
@@ -226,7 +257,8 @@
 									</div>
 								</div>
 							</div>
-							<div class="border-box">
+
+							<div class="border-box" data-aos="fade-up">
 								<div class="row justify-content-center no-gutters mb-5 mb-lg-0 workshop-item">
 									<div class="col-lg-6 workshop-item-image">
 										<img class="img-fluid" src="img/cards/iot.jpg" alt="">
@@ -235,7 +267,7 @@
 										<div class="bg-black text-center h-100 project">
 											<div class="d-flex h-100">
 												<div class="project-text w-100 my-auto text-center text-lg-right">
-													<h4 class="sub-heading inline orange nexa">Idea <a class="white">
+													<h4 class="sub-heading inline orange nexa">Ideate <a class="white">
 														X
 													</a></h4>
 													<p class="mb-0 white nexa">
@@ -248,7 +280,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="border-box">
+							<div class="border-box" data-aos="fade-up">
 								<div class="row justify-content-center no-gutters mb-5 mb-lg-0 workshop-item">
 									<div class="col-lg-6 workshop-item-image">
 										<img class="img-fluid" src="img/cards/codifyfix.jpg" alt="">
@@ -257,7 +289,7 @@
 										<div class="bg-black text-center h-100 project">
 											<div class="d-flex h-100">
 												<div class="project-text w-100 my-auto text-center text-lg-left">
-													<h4 class="sub-heading inline orange">Codify <a class="white">Fix</a></h4>
+													<h4 class="sub-heading inline orange">Codify</h4>
 													<p class="mb-0 white nexa">
 														Codify Fix is an engaging and competitive coding event where participants showcase their programming prowess in a high-pressure environment.
 													</p>
@@ -270,7 +302,7 @@
 							</div>
 
 
-							<div>
+							<div class="border-box" data-aos="fade-up">
 								<div class="row justify-content-center flex no-gutters workshop-item">
 									<div class="col-lg-6 workshop-item-image">
 										<img class="img-fluid" src="img/cards/triviaquiz.jpg" alt="">
@@ -279,7 +311,7 @@
 										<div class="bg-black text-center h-100 project">
 											<div class="d-flex h-100">
 												<div class="project-text w-100 my-auto text-center text-lg-right">
-													<h4 class="sub-heading inline orange">Trivia <a class="white">Quizzix</a></h4>
+													<h4 class="sub-heading inline orange">Trivia <a class="white">Quiz</a></h4>
 													<p class="mb-0 white nexa">
 														Trivia Quizzix is an engaging and entertaining event that combines the elements of trivia and quizzing. Participants, either individually or in teams, gather to test their knowledge across a wide range of topics.
 													</p>
@@ -292,7 +324,7 @@
 							</div>
 
 
-							<div>
+							<div data-aos="fade-up">
 								<div class="row justify-content-center no-gutters workshop-item">
 									<div class="col-lg-6 workshop-item-image">
 										<img class="img-fluid" src="img/cards/visionxpo.jpg" alt="">
@@ -314,7 +346,7 @@
 							</div>
 
 
-							<div>
+							<div data-aos="fade-up">
 								<div class="row justify-content-center no-gutters workshop-item">
 									<div class="col-lg-6 workshop-item-image">
 										<img class="img-fluid" src="img/cards/perspecta.jpg" alt="">
@@ -336,7 +368,7 @@
 							</div>
 
 
-							<div>
+							<div data-aos="fade-up">
 								<div class="row justify-content-center no-gutters workshop-item">
 									<div class="col-lg-6 workshop-item-image">
 										<img class="img-fluid" src="img/cards/gamedevelopment.jpg" alt="">
@@ -345,7 +377,7 @@
 										<div class="bg-black text-center h-100 project">
 											<div class="d-flex h-100">
 												<div class="project-text w-100 my-auto text-center text-lg-left">
-													<h4 class="sub-heading inline orange">Gunfire Glyphs</h4>
+													<h4 class="sub-heading inline orange">Gunfire <a class="white">Glyphs</a></h4>
 													<p class="mb-0 white nexa">
 														An electrifying gaming event that brings together avid gamers from all walks of life for an intense competition to determine the last team standing across a variety of games. 
 													</p>
@@ -359,7 +391,7 @@
 
 
 
-							<div>
+							<div data-aos="fade-up">
 								<div class="row justify-content-center no-gutters workshop-item">
 									<div class="col-lg-6 workshop-item-image">
 										<img class="img-fluid" src="img/cards/artify.jpg" alt="">
@@ -368,7 +400,7 @@
 										<div class="bg-black text-center h-100 project">
 											<div class="d-flex h-100">
 												<div class="project-text w-100 my-auto text-center text-lg-right">
-													<h4 class="sub-heading inline orange">Artify</h4>
+													<h4 class="sub-heading inline orange">Artify</a></h4>
 													<p class="mb-0 white nexa">
 														Artify is a vibrant and innovative event that brings together participants from diverse backgrounds to engage in the creation of digital art.
 													</p>
@@ -381,32 +413,7 @@
 							</div>
 
 
-
-									<div>
-								<div class="row justify-content-center no-gutters workshop-item">
-									<div class="col-lg-6 workshop-item-image">
-										<img class="img-fluid" src="img/cards/roborace.jpg" alt="">
-									</div>
-									<div class="col-lg-6 workshop-item-textbox">
-										<div class="bg-black text-center h-100 project">
-											<div class="d-flex h-100">
-												<div class="project-text w-100 my-auto text-center text-lg-right">
-													<h4 class="sub-heading inline orange">Project <a class="white">Expo</a></h4>
-													<p class="mb-0 white nexa">
-														An adrenaline-fueled fusion of cutting-edge tech and high-speed excitement at the RoboRace! Immerse yourself in the future of motorsports, AI-powered race cars take the track, navigating twists, turns, and challenges with lightning-fast precision.
-													</p>
-													
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							
-
-
-							<div>
+							<div data-aos="fade-up">
 								<div class="row justify-content-center no-gutters workshop-item">
 									<div class="col-lg-6 workshop-item-image">
 										<img class="img-fluid" src="img/cards/roborace.jpg" alt="">
@@ -415,7 +422,7 @@
 										<div class="bg-black text-center h-100 project">
 											<div class="d-flex h-100">
 												<div class="project-text w-100 my-auto text-center text-lg-right">
-													<h4 class="sub-heading inline orange">Robo <a class="white">Race</a></h4>
+													<h4 class="sub-heading inline orange">Robo <a class="white">Rally</a></h4>
 													<p class="mb-0 white nexa">
 														Robo Race is an engaging and competitive event where participants showcase their skills in designing, building, and demonstrating robotic projects.
 													</p>
@@ -430,7 +437,7 @@
 
 
 
-							<div>
+							<div data-aos="fade-up">
 								<div class="row justify-content-center no-gutters workshop-item">
 									<div class="col-lg-6 workshop-item-image">
 										<img class="img-fluid" src="img/cards/trading.jpeg" alt="">
@@ -439,7 +446,7 @@
 										<div class="bg-black text-center h-100 project">
 											<div class="d-flex h-100">
 												<div class="project-text w-100 my-auto text-center text-lg-right">
-													<h4 class="sub-heading inline orange">Stock<a class="">Dash</a></h4>
+													<h4 class="sub-heading inline orange">Trade <a class="white">Rave</a></h4>
 													<p class="mb-0 white nexa">
 														Dive into the dynamic world of stocks with StockDash, the exhilarating 3-day online trading event at TechTonic. Join us for an immersive experience where financial markets meet technology.
 													</p>
@@ -450,8 +457,6 @@
 									</div>
 								</div>
 							</div>
-
-
 
 						</div>
 					</div>
@@ -478,7 +483,7 @@
 									<tbody>
 										<tr>
 											<td>9:00 AM</td>
-											<td>Inaguration Ceremony, Ideathon</td>
+											<td>Inaguration Ceremony, IdeateX</td>
 										</tr>
 										<tr>
 											<td>10:00 AM</td>
@@ -486,15 +491,11 @@
 										</tr>
 										<tr>
 											<td>11:00 AM</td>
-											<td>CodifyFix</td>
-										</tr>
-										<tr>
-											<td>1:00 PM</td>
-											<td>Lunch</td>
+											<td>Codify, Trade Rave</td>
 										</tr>
 										<tr>
 											<td>1:30 PM</td>
-											<td>Trivia Quizzix</td>
+											<td>Trivia Quiz</td>
 										</tr>
 									</tbody>
 								</table>
@@ -513,7 +514,11 @@
 									<tbody>
 										<tr>
 											<td>9:00 AM</td>
-											<td>Robo Race, PerSpecta, Gaming</td>
+											<td>Robo Rally, PerSpecta, Gunfire Glyphs</td>
+										</tr>
+										<tr>
+											<td>10:00 AM</td>
+											<td>Trade Rave</td>
 										</tr>
 										<tr>
 											<td>1:00 PM</td>
@@ -536,15 +541,15 @@
 									<tbody>
 										<tr>
 											<td>9:00 AM</td>
-											<td>Gaming</td>
+											<td>Gunfire Glyphs</td>
 										</tr>
 										<tr>
-											<td>1:00 PM</td>
-											<td>Hackathon ends</td>
+											<td>10:00 AM</td>
+											<td>Trade Rave</td>
 										</tr>
 										<tr>
 											<td>2:00 PM</td>
-											<td>Digital Art</td>
+											<td>Artify</td>
 										</tr>
 										<tr>
 											<td>4:00 PM</td>
@@ -569,63 +574,12 @@
 					<div class="mx-auto diagonal-section-content col-lg-8 col-10" style="text-align: left;">
 						
 						<div class="d-flex justify-content-center">
-							<button class="btn btn-primary btn-lg">Rule Book</button>
+							<a href="rulebook.pdf">
+								<button class="btn btn-primary btn-lg">Rule Book</button>
+							</a>
 						</div>
-						<!-- <ul class="rules-list">
-							<li>
-								<b>Reporting Time:</b> All participants must arrive at the venue one hour before their allocated time on the event day(8:30am).
-							</li>
-							<li>
-								<b>Event Duration:</b> Tech Tonic is a 24-hour event starting from 11 AM on Day 1 to 11 AM on Day 2.
-							</li>
-							<li>
-								<b>Meals:</b> Lunch and Dinner will be provided on Day 1, and breakfast will be provided on Day 2. Snacks will also be provided.
-							</li>
-							<li>
-								<b>Essential:</b> Participants must carry their college ID cards, Laptops and all the required  hardware parts must be brought by the team only, organizers will not be liable to provide it. 
-							</li>
-							<li>
-								<b>Theme:</b> The Hackathon has various domains, allowing participants to work on any project idea they choose. Note : The participants registered for Web and App Development will be working on the given  problem statements 
-
-							</li>
-							<li>
-								<b>Accommodation:</b> All participants must stay in campus, and accommodation facilities will be provided for the night.
-							</li>
-							<li>
-								<b>Certificate:</b> E-certificates will be issued to all participants as acknowledgment of their participation.
-							</li>
-							<li>
-								<b>Registration Fee:</b> The registration fee is non-refundable and depends on the event.
-							</li>
-							<li>
-								<b>Team Size:</b> Teams can have 2-3 members. No members can be added/removed from the team. Team should be the same as during the sumbission done before.
-							</li>
-							<li>
-								<b>Code of Conduct:</b> Participants must maintain professionalism and ethical behavior. Cheating, plagiarism, or any unethical practices will lead to immediate disqualification.
-							</li>
-							<li>
-								<b>Completion:</b> Projects must be completed within the given time frame.
-							</li>
-							<li>
-								<b>Collaboration:</b> Teams must work independently, collaboration with other teams is not allowed.
-							</li>
-							<li>
-								<b>Judging Criteria:</b> The judging criteria, including innovation, technicality, usability, and presentations, will be communicated to participants before the judging process.
-							</li>
-							<li>
-								<b>Organizers Decision:</b> The decisions made by the organizers and judges will be final and binding.
-							</li>
-							<li>
-								<b>Code Usage:</b> Teams can use libraries, frameworks, or open source code, but using pre-existing projects solely for the purpose of the event is not allowed.
-							</li>
-							<li>
-								<b>Malpractice:</b> Participants are encouraged to report any malpractice to the judges for fair evaluation.
-							</li>
-						</ul>
-					</div> -->
 			</section>
 			
-
 			<section>
 				<h1 class="sub-heading diagonal-text orange sub-heading-title" style="padding-bottom: 1rem; padding-top: 100px; margin-bottom: 0;">Team</h1>
 			</section>
@@ -634,7 +588,7 @@
 				<div class="mx-auto diagonal-section-content">
 					<div class="container">
 						<div class="row">
-							<div class="col-xl-4">
+							<div class="col-xl-4 col-4">
 								<div class="team-card">
 									<div class="team-image">
 										<img class="team-image img-fluid" src="img/team/sandeep.jpg">
@@ -652,14 +606,14 @@
 							</div>
 
 
-							<div class="col-xl-4">
+							<div class="col-xl-4 col-4">
 								<div class="team-card">
 									<div class="team-image">
 										<img class="team-image img-fluid" src="img/team/dhanush.jpg">
 									</div>
 									<div class="team-textbox">
 										<h3 class="team-name nexa orange">Dhanush Gupta</h3>
-										<h5 class="nexa blue">Co Lead</h5>
+										<h5 class="nexa blue">Volunteer Handling</h5>
 										<div class="team-social accessible">
 											<a class="social-button orange-hover" href="https://www.linkedin.com/in/dhanush-gupta-b22b84232">
 												<i class="fab fa-linkedin"></i>
@@ -670,7 +624,7 @@
 							</div>
 
 
-							<div class="col-xl-4">
+							<div class="col-xl-4 col-4">
 								<div class="team-card">
 									<div class="team-image">
 										<img class="team-image img-fluid" src="img/team/sahil.jpg">
@@ -688,7 +642,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-xl-4">
+							<div class="col-xl-4 col-4">
 								<div class="team-card">
 									<div class="team-image">
 										<img class="team-image img-fluid" src="img/team/sanjana.jpg">
@@ -706,7 +660,7 @@
 							</div>
 							
 
-							<div class="col-xl-4">
+							<div class="col-xl-4 col-4">
 								<div class="team-card">
 									<div class="team-image">
 										<img class="team-image img-fluid" src="img/team/srilakshmi.jpg">
@@ -722,7 +676,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-xl-4">
+							<div class="col-xl-4 col-4">
 								<div class="team-card">
 									<div class="team-image">
 										<img class="team-image img-fluid" src="img/team/saathvick.jpg">
@@ -740,7 +694,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-xl-4">
+							<div class="col-xl-4 col-4">
 								<div class="team-card">
 									<div class="team-image">
 										<img class="team-image img-fluid" src="img/team/vijay.jpg">
@@ -817,6 +771,7 @@
 
 		<!-- Custom scripts for this template -->
 		<script src="js/grayscale.js"></script>
+		<script src="js/aos.js"></script>
 
 		<!-- Custom javascript -->
 		<script src="js/custom.js"></script>
@@ -827,6 +782,10 @@
 		<script src="particles/app.js"></script> -->
 
 		<script>
+			$(document).ready(()=>{
+				$(".loader-container").fadeOut();
+				AOS.init();
+			})
 
 			setInterval(function () {
 				let endDate = new Date("26 February 2024 9:30 AM");
@@ -856,21 +815,17 @@
 				type: "GET",
 				dataType: "json",
 				success: function (data) {
-					console.log(data);
 					let x = data.data;
 					for(let i = 0; i < x.length; i++){
-						console.log(x[i]);
 
 						let z = JSON.stringify(x[i]);
 						z = z.split(":")[1];
 						z = z.replace("}","");
 						z = z.split(",")[0];
-						console.log(z);
 
 
 
 						let stats = "<div class='badges container-fluid badges mt-2'><div class='badge badge-primary mr-1'>Slots Left: "+z+"</div><div class='badge badge-success'>Reg. Fee: "+ x[i].Fee +"</div></div>";
-						console.log(stats);
 
 						$(".cards-holder").children().eq(i).find('p').append(stats);
 					}

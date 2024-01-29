@@ -13,15 +13,15 @@ var GET_SLOT_DATA = BASE_URL+"getSlotStats.php";
 
 var team_sizes = [
 	{ "name": "Code Arena", "size": 4 },
-	{ "name": "Idea X", "size": 3 },
-	{ "name": "CodifyFix", "size": 2 },
-	{ "name": "Trivia Quizzix", "size": 3 },
+	{ "name": "IdeateX", "size": 3 },
+	{ "name": "Codify", "size": 2 },
+	{ "name": "Trivia Quiz", "size": 3 },
 	{ "name": "Startup Expo", "size": 4 },
 	{ "name": "PerSpecta", "size": 3 },
 	{ "name": "Gaming (BGMI)", "size": 4 },
 	{ "name": "Gaming (FreeFire)", "size": 4 },
 	{ "name": "Artify", "size": 1 },
 	{ "name": "Vision Xpo", "size": 4 },
-	{ "name": "Robo Race", "size": 3 },
-	{ "name": "Trading", "size": 1 }
+	{ "name": "Robo Rally", "size": 3 },
+	{ "name": "Trade Rave", "size": 1 }
 ]

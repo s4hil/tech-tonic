@@ -2,13 +2,10 @@
 <html>
 <head>
     <title>Admin - Tech Tonic</title>
-    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 </head>
 <body>
     <div class="flex justify-content-center m-5">
         <h2 class="alert alert-info text-center">Submissions</h2>
-        <button class="btn btn-primary" id="export">Export as Excel</button>
-        <button class="btn btn-success" id="show-members">Show/Hide All data</button>
         <table class="table table-striped mt-2" id="table">
             <thead>
                 <tr class="bg-dark text-white">
@@ -23,6 +20,7 @@
                     <th class="hidden">TXN ID</th>
                     <th class="hidden">Time Stamp</th>
                     <th>Event</th>
+                    <th>Domain</th>
                     <th>Payment</th>
                     <th>Action</th>
                 </tr>
@@ -62,13 +60,14 @@
                                             <td>${x[i].team_name}</td>
                                             <td>${x[i].email}</td>
                                             <td>${x[i].college_name}</td>
-                                            <td class='hidden'>${x[i].member1}</td>
-                                            <td class='hidden'>${x[i].member2}</td>
-                                            <td class='hidden'>${x[i].member3}</td>
-                                            <td class='hidden'>${x[i].member4}</td>
-                                            <td class='hidden'>${x[i].txn_id}</td>
-                                            <td class='hidden'>${x[i].timestamp}</td>
+                                            <td>(${x[i].member1})</td>
+                                            <td>(${x[i].member2})</td>
+                                            <td>(${x[i].member3})</td>
+                                            <td>(${x[i].member4})</td>
+                                            <td>${x[i].txn_id}</td>
+                                            <td>${x[i].timestamp}</td>
                                             <td>${x[i].event}</td>
+                                            <td>${x[i].domain}</td>
                                             <td>
                                                 <a target='_blank' class='btn btn-warning' href="`+ UPLOAD_DIR +`${x[i].payment_sc}">View</a>
                                             </td>
@@ -79,7 +78,11 @@
                                     `;
                             }
                             $("#table-body").html(output);
-                            $(".hidden").slideUp();
+                            $("#table").table2excel({
+                                name: "Submissions",
+                                filename: new Date()+" submissions.xls",
+                                preserveColors: false
+                            });
                         }
                     },
                     error: function () {
@@ -89,37 +92,6 @@
 
         });
 
-        $("#show-members").click((e)=>{
-            $(".hidden").slideToggle();
-        });
-
-        $("#export").click(()=>{
-            window.open('export.html', '_blank').focus();
-        });
-
-        $("#table-body").on('click', '.del-sub', function() {
-            let email = $(this).attr('email-id');
-            let myThis = this;
-
-            if (confirm("Are you sure?") == true) {
-                $.ajax({
-                    url: DEL_SUBMISSION_URL,
-                    method: "POST",
-                    data: JSON.stringify({email: email}),
-                    dataType: "json",
-                    success: function (data) {
-                        console.log(data);
-                        if (data.status == true) {
-                            $(myThis).closest('tr').fadeOut();
-                            alert(data.msg);
-                        }
-                    },
-                    error: function () {
-                        console.log("req err");
-                    }
-                })
-            }
-        })
     </script>
 </body>
 </html>
