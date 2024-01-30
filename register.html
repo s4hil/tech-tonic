@@ -138,7 +138,7 @@
 				                                </select>
 				                            </div>
 
-				                            <div class="form-group mb-2">
+				                            <div class="form-group mb-2" id="qr-input">
 				                                	<div class="d-flex justify-content-between mb-2">
 				                                		<label>Payment Screenshot</label>
 				                                		<button id="showUPI" class="btn btn-success pt-1 pb-1 pl-2 pr-2">Show UPI QR</button>
@@ -149,7 +149,7 @@
 				                                    <input class="form-control" type="file" id="sc" value="" name="sc">
 				                            </div>
 
-				                             <div class="form-group">
+				                             <div class="form-group" id="txn-id-input">
 				                            	<label>Transaction ID</label>
 				                                <input class="form-control" name="txn_id" type="text" id="txn_id">
 				                            </div>
@@ -309,7 +309,7 @@
 							}
 							else{
 								alert("Get QR Now!");
-								window.location.href = "getqr.html";
+								// window.location.href = "getqr.html";
 							}           
 	                    },
 	                    error: function (s) {
@@ -353,6 +353,11 @@
 	        		$("#leader-name-label").text("Leader Name");
 	        		$("#leader-mobile-label").text("Leader WhatsApp Number");
 	        		$("#leader-usn-label").text("Leader USN Number");
+	        	}
+	        	
+	        	if (name == "Vision Xpo" || name == "Artify" || name == "Robo Rally" || name == "Trade Rave") {
+	        		$("#txn-id-input").remove();
+	        		$("#qr-input").remove();
 	        	}
 	        })
 		</script>
