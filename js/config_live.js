@@ -13,8 +13,8 @@ var GET_SLOT_DATA = BASE_URL+"getSlotStats.php";
 
 var team_sizes = [
 	{ "name": "Code Arena", "size": 4 },
-	{ "name": "IdeateX", "size": 3 },
-	{ "name": "Codify", "size": 2 },
+	{ "name": "Idea X", "size": 3 },
+	{ "name": "Codify", "size": 1 },
 	{ "name": "Trivia Quiz", "size": 3 },
 	{ "name": "Startup Expo", "size": 4 },
 	{ "name": "PerSpecta", "size": 3 },

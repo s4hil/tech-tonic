@@ -12,6 +12,7 @@
         <table class="table table-striped mt-2" id="table">
             <thead>
                 <tr class="bg-dark text-white">
+                    <th>Sno</th>
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
@@ -55,9 +56,12 @@
                             alert(data.msg);
                         }
                         else{
+                            let count = 0;
                             for(let i = 0; i < x.length; i++){
+                                count++;
                                 output += `
                                         <tr>
+                                            <td>${count}</td>
                                             <td>${x[i].id}</td>
                                             <td>${x[i].team_name}</td>
                                             <td>${x[i].email}</td>
