@@ -121,6 +121,14 @@
 				                                </select>
 				                            </div>
 
+				                            <div class="form-group" style="display: none;" id="code-arena-size-box">
+				                            	<label>Team Size</label>
+				                            	<select class="form-control" id="code-arena-size" onchange="handleSize()">
+				                            		<option value="0">Choose</option>
+				                            		<option value="3">3</option>
+				                            		<option value="4">4</option>
+				                            	</select>
+				                            </div>
 
 				                            <div class="member-box">
 					                            
@@ -295,11 +303,13 @@
 	                    cache: false,
 	                    beforeSend: function () {
 	                        $("#submitForm").prop('disabled', true);
+	                        $("#submitForm").text("Submitting...");
 	                        $("#register-form").css('opacity', '0.5');
 	                    },
 	                    success: function (x) {
 	                        console.log(x);
 	                        $("#submitForm").prop('disabled', false);
+	                        $("#submitForm").text("Submit");
 	                        $("#register-form").css('opacity', '1');
 	                        $("#register-form")[0].reset();
 
@@ -347,6 +357,8 @@
 	        	$(".member-box").html(op);
 	        	if (name == "Code Arena") {
 	        		$("#code-arena-domain").show();
+	        		$("#code-arena-size-box").show();
+
 	        	}
 	        	if (name == "Gaming (BGMI)" || name == "Gaming (FreeFire)") {
 	        		$("#leader-name-label").text("Leader Name");
@@ -359,6 +371,19 @@
 	        		$("#qr-input").remove();
 	        	}
 	        })
+
+	        function handleSize() {
+	        	let num = $("#code-arena-size").val();
+	        	console.log(num);
+	        	if (num == 3) {
+	        		$("#member-4-usn").val("NA");
+	        		$("#member-4-name").val("NA");
+	        		$("#member-4-mobile").val("NA");
+	        		$("#member-4-usn").attr('disabled', true);
+	        		$("#member-4-name").attr('disabled', true);
+	        		$("#member-4-mobile").attr('disabled', true);
+	        	}
+	        }
 		</script>
 
 	</body>

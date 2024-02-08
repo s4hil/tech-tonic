@@ -80,8 +80,18 @@
 			                    <div class="form-group">
 			                        <button class="btn btn-primary" id="submitForm">Fetch</button>
 			                    </div>
-			                    <div class="submit d-flex justify-content-center">
-			                        <div id="qr-code"></div>
+			                    <div id="card-container">
+			                    	<div class="submit d-flex justify-content-center">
+				                    	<div class="qr-card border p-3 m-3" id="qr-card">
+				                    		<div class="header">
+				                    			<h3>Tech Tonic</h3>
+				                    		</div>
+				                        	<div id="qr-code"></div>
+				                        	<br>
+				                        	<h6 id="team-name"></h6>
+				                    	</div>
+			                    	</div>
+			                    	<button class="btn btn-info py-2 mt-3" id="download-card">Download</button>
 			                    </div>
 							</div>
 						</div>
@@ -132,6 +142,8 @@
 						</div>
 					</div>
 				</div>
+
+				<img src="" id="previewImg">
 				
 			</section>
 			
@@ -150,10 +162,12 @@
 		<!-- Custom javascript -->
 		<script src="js/custom.js"></script>
 		<script src="js/config.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
     	<script type='text/javascript' src='js/qrcode.min.js'></script>
 		
 		<script>
+			$("#card-container").hide();
 			$("#submitForm").click((e)=>{
 	            let email = $("#email").val();
 
@@ -163,7 +177,7 @@
 	                data: JSON.stringify({ email:email }),
 	                dataType: "json",
 	                success: function (data) {
-	                    if (data.status == false) {
+	                    if (data.data.team_name == null) {
 	                        alert("Entered email does not match with submissions.")
 	                    }
 	                    else{
@@ -174,7 +188,8 @@
 	                        let members = x.members;
 	                        const qrData = {team_number:teamNumber, team_name:teamName, participants:members, event:event};
 	                        new QRCode(document.getElementById("qr-code"), JSON.stringify(qrData));
-	                        $("#alert").text("Hold and save the image!");
+	                        $("#team-name").text(teamName+" ("+teamNumber+")");
+	                        $("#card-container").show();
 	                    }
 	                },
 	                error: function () {
@@ -182,6 +197,19 @@
 	                }
 	            })
 	        });
+
+	        $("#download-card").click((e)=>{
+	        	e.preventDefault();
+	        	html2canvas(document.getElementById("qr-card")).then(function (canvas) {			
+	        		var anchorTag = document.createElement("a");
+					document.body.appendChild(anchorTag);
+					document.getElementById("previewImg").appendChild(canvas);
+					anchorTag.download = "tech-tonic-qr.jpg";
+					anchorTag.href = canvas.toDataURL();
+					anchorTag.target = '_blank';
+					anchorTag.click();
+				});
+	        })
 		</script>
 
 	</body>
