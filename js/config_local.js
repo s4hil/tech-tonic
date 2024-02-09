@@ -5,6 +5,7 @@ var UPLOAD_DIR = BASE_URL+"uploads/";
 var QR_URL = BASE_URL+"getQR.php";
 
 var GET_SUBMISSIONS_URL = BASE_URL+"getData.php";
+var GET_SUBMISSION_URL = BASE_URL+"getData.php";
 var DEL_SUBMISSION_URL = BASE_URL+"delSubmission.php";
 var GET_ALL_PARTICIPANTS = BASE_URL+"getAllParticipants.php";
 var GET_ALL_TEAMS = BASE_URL+"getAllTeams.php";

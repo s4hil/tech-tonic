@@ -94,8 +94,8 @@
                                             <td>${x[i].timestamp}</td>
                                             <td>${x[i].event}</td>
                                             <td>
-                                                <button class='show-submission btn btn-info' email-id="${x[i].email}"><i class='fas fa-file'></i></button>
-                                                <button class='del-sub btn btn-danger' email-id="${x[i].email}"><i class='fas fa-trash-alt'></i></button>
+                                                <button class='show-submission btn btn-info' sub-id="${x[i].id}"><i class='fas fa-file'></i></button>
+                                                <button class='del-sub btn btn-danger' sub-id="${x[i].id}"><i class='fas fa-trash-alt'></i></button>
                                             </td>
                                         </tr>
                                     `;
@@ -123,14 +123,14 @@
         });
 
         $("#table-body").on('click', '.del-sub', function() {
-            let email = $(this).attr('email-id');
+            let id = $(this).attr('sub-id');
             let myThis = this;
 
             if (confirm("Are you sure?") == true) {
                 $.ajax({
                     url: DEL_SUBMISSION_URL,
                     method: "POST",
-                    data: JSON.stringify({email: email}),
+                    data: JSON.stringify({id: id}),
                     dataType: "json",
                     success: function (data) {
                         if (data.status == true) {
@@ -145,15 +145,16 @@
             }
         })
         $("#table-body").on('click', '.show-submission', function() {
-            let email = $(this).attr('email-id');
+            let id = $(this).attr('sub-id');
             let myThis = this;
+            console.log(id);
 
             $("#modal-body").html("<>");
 
             $.ajax({
                 url: GET_SUBMISSION_URL,
                 method: "POST",
-                data: JSON.stringify({email: email}),
+                data: JSON.stringify({id: id}),
                 dataType: "json",
                 success: function (data) {
                     if (data.status == true) {
@@ -174,7 +175,7 @@
                                     Domain: ${x.domain} <br>
                                     Time: ${x.timestamp} <br>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-3">
                                     <h6 class="text-primary fw-bold">Participants</h6><hr>
                                     <ul>
                                         <li>${x.member1.split('-')[0]} </li>
@@ -197,7 +198,7 @@
                                         <li>${x.member4.split('-')[2]} </li>
                                     </ul>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-4">
                                     <h6 class="text-warning fw-bold">Payment</h6><hr>
                                     ID: ${x.txn_id == "" ? "Free Event": x.txn_id} <br>
                                     <a href="${UPLOAD_DIR + x.payment_sc}">
@@ -212,7 +213,7 @@
                     }
                 },
                 error: function () {
-                    console.log("req err");
+                    console.log("fetch sub err");
                 }
             })
         })
