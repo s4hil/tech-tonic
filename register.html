@@ -95,7 +95,7 @@
 
 				                            <div class="form-group">
 				                            	<label>Email Address Of one member</label>
-				                                <input class="form-control" type="email" name="email" id="email">
+				                                <input class="form-control" type="email" name="email" id="email" onblur="checkDuplication(this)">
 				                            </div><!-- col-6 -->
 
 				                            <div class="form-group">
@@ -248,6 +248,26 @@
 				$("#upi-info").slideToggle();
 			});
 
+			function checkDuplication(e) {
+				let email = $(e).val();
+				var exists = false;
+
+				$.ajax({
+					url: CHECK_DUBLICATION,
+					dataType: "json",
+					data: JSON.stringify({email:email}),
+					method: "POST",
+					success: function (data) {
+						if (data.exists == true) {
+							alert("Email already registered, use a different one!");
+						}
+					},
+					error: function () {
+						console.log("Email check req err");
+					}
+				})
+			}
+
 			$("#register-form").on('submit', function (e) {
 	            e.preventDefault();
 	            console.log("clicked");
@@ -293,41 +313,40 @@
 	                
 	            }
 	            if (input_error == false) {
-	                $.ajax({
-	                    type: "POST",
-	                    url: SAVE_DATA,
-	                    data: new FormData(this),
-	                    dataType: "json",
-	                    contentType: false,
-	                    processData: false,
-	                    cache: false,
-	                    beforeSend: function () {
-	                        $("#submitForm").prop('disabled', true);
-	                        $("#submitForm").text("Submitting...");
-	                        $("#register-form").css('opacity', '0.5');
-	                    },
-	                    success: function (x) {
-	                        console.log(x);
-	                        $("#submitForm").prop('disabled', false);
-	                        $("#submitForm").text("Submit");
-	                        $("#register-form").css('opacity', '1');
-	                        $("#register-form")[0].reset();
+	            		$.ajax({
+		                    type: "POST",
+		                    url: SAVE_DATA,
+		                    data: new FormData(this),
+		                    dataType: "json",
+		                    contentType: false,
+		                    processData: false,
+		                    cache: false,
+		                    beforeSend: function () {
+		                        $("#submitForm").prop('disabled', true);
+		                        $("#submitForm").text("Submitting...");
+		                        $("#register-form").css('opacity', '0.5');
+		                    },
+		                    success: function (x) {
+		                        console.log(x);
+		                        $("#submitForm").prop('disabled', false);
+		                        $("#submitForm").text("Submit");
+		                        $("#register-form").css('opacity', '1');
+		                        $("#register-form")[0].reset();
 
-							if (x.status == false) {
-								alert(x.msg);
-							}
-							else{
-								alert("Submitted Successfully, Get QR Now!");
-								window.location.href = "getqr.html";
-							}           
-	                    },
-	                    error: function (s) {
-	                        console.log(s.responseText);
-	                    }
+								if (x.status == false) {
+									alert(x.msg);
+								}
+								else{
+									alert("Submitted Successfully, Get QR Now!");
+									window.location.href = "getqr.html";
+								}           
+		                    },
+		                    error: function (s) {
+		                        console.log(s.responseText);
+		                    }
 
-	                });
-	            }
-
+		                });
+	            	}
 	        })
 
 	        $("#events").on('change', function () {
