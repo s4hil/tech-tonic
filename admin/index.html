@@ -127,10 +127,11 @@
             let myThis = this;
 
             if (confirm("Are you sure?") == true) {
+                let delKey = prompt("Enter key to delete:");
                 $.ajax({
                     url: DEL_SUBMISSION_URL,
                     method: "POST",
-                    data: JSON.stringify({id: id}),
+                    data: JSON.stringify({id: id, delKey:delKey}),
                     dataType: "json",
                     success: function (data) {
                         if (data.status == true) {

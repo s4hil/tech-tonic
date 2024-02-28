@@ -257,6 +257,8 @@
 					success: function (data) {
 						if (data.exists == true) {
 							alert("Email already registered, use a different one!");
+							$("#email").val("");
+							$("#email").focus();
 						}
 					},
 					error: function () {
