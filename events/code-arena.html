@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <title>Explore Card</title>
+    <style>
+      #logo {
+        top: 50px;
+      }
+      .nav-item {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        margin-top: 20px;
+      }
+      .nav-link {
+        font-family: "nexa", sans-serif;
+        font-size: 1.5em;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .nav-link:hover {
+        background-color: #0056b3;
+        color: #fff;
+      }
+
+      h1 {
+        font-size: 5em;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 2em;
+        text-align: center;
+        color: #0056b3;
+      }
+      .text {
+        border-left: 2px solid #333;
+        padding-left: 10px;
+      }
+
+      .text h3 {
+        margin-top: 0;
+      }
+
+      .text p {
+        margin-bottom: 0.5em;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      .explore-container {
+        display: flex;
+        gap: 16px;
+        padding: 20px;
+        overflow-x: auto;
+        background-color: #ffffff;
+      }
+
+      .explore-card {
+        position: relative;
+        flex: 1;
+        min-width: 170px;
+        height: 300px;
+        border-radius: 24px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .explore-card:hover {
+        transform: scale(1.05);
+      }
+
+      .explore-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 24px;
+      }
+
+      .explore-card h3 {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        margin: 0;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+      }
+
+      .wrap {
+        max-width: 1210px;
+        margin: 50px auto;
+        padding: 0 20px;
+        position: relative;
+      }
+      .wrap .center-line {
+        position: absolute;
+        height: 100%;
+        width: 4px;
+        background: black;
+        left: 50%;
+        top: 20px;
+        transform: translateX(-50%);
+      }
+      .wrap .row {
+        display: flex;
+      }
+      .wrap .row-1 {
+        justify-content: flex-start;
+      }
+      .wrap .row-2 {
+        justify-content: flex-end;
+      }
+      .wrap .row section {
+        background: rgb(217, 210, 210);
+        border-radius: 5px;
+        width: calc(50% - 40px);
+        padding: 15px;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .wrap .row section:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+      .wrap .row section::before {
+        position: absolute;
+        content: "";
+        height: 15px;
+        width: 15px;
+        background: rgb(27, 120, 50);
+        top: 28px;
+        z-index: -1;
+        transform: rotate(45deg);
+      }
+      .row-1 section::before {
+        right: -7px;
+      }
+      .row-2 section::before {
+        left: -7px;
+      }
+      .row section .icon,
+      .center-line .scroll-icon {
+        position: absolute;
+        background: #f1f1f1;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        color: black;
+        font-size: 20px;
+        box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0, 0, 0, 0.08),
+          0 3px 0 4px rgba(0, 0, 0, 0.05);
+      }
+      .center-line .scroll-icon {
+        bottom: 0px;
+        left: 50%;
+        font-size: 15px;
+        transform: translateX(-50%);
+      }
+      .row-1 section .icon {
+        top: 15px;
+        right: -60px;
+      }
+      .row-2 section .icon {
+        top: 15px;
+        left: -60px;
+      }
+      .row section .details,
+      .row section .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .row section .details .title {
+        font-size: 19px;
+        font-weight: 600;
+      }
+      .row section p {
+        margin: 10px 0 17px 0;
+      }
+      @media (max-width: 790px) {
+        .wrap .center-line {
+          left: 40px;
+        }
+        .wrap .row {
+          margin: 30px 0 3px 60px;
+        }
+        .wrap .row section {
+          width: 100%;
+        }
+        .row-1 section::before {
+          left: -7px;
+        }
+        .row-1 section .icon {
+          left: -60px;
+        }
+      }
+      @media (max-width: 440px) {
+        .wrap .center-line,
+        .row section::before,
+        .row section .icon {
+          display: none;
+        }
+        .wrap .row {
+          margin: 50px 0;
+        }
+        .wrap .center-line {
+          left: 40px;
+        }
+        .wrap .row {
+          margin: 40px 0 10px 60px;
+        }
+        .wrap .row section {
+          width: 100%;
+        }
+        .row-1 section::before {
+          left: -6px;
+        }
+        .row-1 section .icon {
+          left: -60px;
+        }
+      }
+
+      /*test */
+      /* section#faq {
+        background-color: #fcfd9b;
+      } */
+      div#clock {
+        margin-bottom: 0;
+      }
+      section#count {
+        height: 0;
+      }
+
+      /* section#prizes {
+        background-color: white;
+      } */
+
+      .schedule .nav-tabs .nav-link,
+      div#headingOne,
+      div#headingOne1,
+      div#headingOne3 {
+        background: #1c1c1c;
+      }
+      .schedule .show .card-body {
+        background: #333333;
+      }
+      .schedule .card-header h4,
+      p,
+      h3 {
+        color: white;
+      }
+      .schedule .card-header .name {
+        color: beige;
+      }
+      .schedule .nav-tabs .nav-link,
+      #information-bar .inforation-wrapper,
+      .blog-item .icon {
+        box-shadow: 0 8px 24px #000;
+      }
+      .schedule .item-text h4 {
+        color: white;
+      }
+      .schedule .item-text h5 {
+        color: aliceblue;
+      }
+      .schedule .schedule-tab-content .tab-content,
+      #contact-text .contact-wrapper {
+        box-shadow: 0 8px 24px #581111;
+      }
+      .blog-item .descr {
+        background: #1c1c1c;
+        color: whitesmoke;
+      }
+      .blog-item .descr h3 a {
+        color: white;
+      }
+      section#contact-text,
+      footer {
+        background: #000;
+      }
+      #contact-text .contact-wrapper {
+        background: #1c1c1c;
+      }
+      .single-intro-text {
+        box-shadow: 0 8px 24px #000;
+        background: #1c1c1c;
+      }
+      .single-intro-text:hover {
+        box-shadow: 0 8px 24px #2c2c2c;
+      }
+      .blog-item {
+        box-shadow: 0 8px 24px #000;
+      }
+      .blog-item:hover {
+        box-shadow: 0 8px 24px #2c2c2c;
+      }
+
+      .timeline_text {
+        color: black;
+      }
+
+      .faq-grid {
+        display: grid;
+        gap: 20px;
+      }
+
+      /* For small screens */
+      @media (max-width: 768px) {
+        .faq-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* For large screens */
+      @media (min-width: 769px) {
+        .faq-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .single-intro-text {
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .single-intro-text i {
+        font-size: 24px;
+        color: #f05a22;
+      }
+
+      .single-intro-text h3 {
+        font-size: 18px;
+        margin-top: 10px;
+        color: #000;
+      }
+
+      .single-intro-text p {
+        font-size: 14px;
+        color: #555;
+      }
+
+      .single-intro-text .count-number {
+        display: block;
+        font-size: 24px;
+        color: #f05a22;
+        margin-top: 10px;
+      }
+
+      .text-container {
+        align-items: center;
+        margin-left: 10%;
+        margin-top: 20px;
+        margin-right: 10%;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        background-color: #aca1a1;
+      }
+
+      .text-container:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        transform: translateY(-5px);
+      }
+
+      .text-item {
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+        color: #000;
+        text-align: center;
+        font-size: 20px;
+      }
+
+      .text-item:hover {
+        color: #007bff;
+      }
+
+      .header {
+        background-image: url("images/gif1.gif");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .header a {
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      .header img {
+        display: block;
+        margin: 0 auto;
+      }
+
+      #logo {
+        width: 100px;
+      }
+
+      .header h1,
+      .header h2 {
+        color: whitesmoke;
+        margin: 10px 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <a href="../index.html">
+        <img src="images/logo.png" alt="Logo" id="logo" />
+      </a>
+      <h1>Code Arena</h1>
+      <h2>Domains</h2>
+      <!-- <img src="images/gif1.gif" /> -->
+    </div>
+
+    <div class="explore-container">
+      <div class="explore-card">
+        <img src="images/iot.jpg" alt="Education" />
+        <h3>IOT</h3>
+      </div>
+
+      <div class="explore-card">
+        <img src="images/webdev.jpg" alt="Web 3.0/Blockchain" />
+        <h3>Web / App Development</h3>
+      </div>
+
+      <div class="explore-card">
+        <img src="images/health.jpg" alt="Healthcare" />
+        <h3>Healthcare</h3>
+      </div>
+
+      <!-- <div class="explore-card">
+        <img src="envir.jpg" alt="Environment" />
+        <h3>Environment</h3>
+      </div>
+
+      <div class="explore-card">
+        <img src="openin.jpg" alt="Open Innovation" />
+        <h3>Open Innovation</h3>
+      </div> -->
+    </div>
+    <div class="text-container">
+      <p class="text-item">
+        <b> IoT and Web/App Development:</b> Problem statements will be provided
+        by the organizers.
+      </p>
+      <p class="text-item">
+        <b> Healthcare: </b> Participants can choose their own problem
+        statements within the healthcare domain.
+      </p>
+    </div>
+    <div class="timelime">
+      <h2>Timeline</h2>
+    </div>
+    <div class="wrap">
+      <div class="center-line">
+        <a href="#" class="scroll-icon"><i class="fas fa-caret-up"></i></a>
+      </div>
+      <div class="row row-1" data-aos="fade-right">
+        <section>
+          <i class="icon fas fa-home"></i>
+          <div class="details">
+            <span class="title">Start Registrations</span>
+            <span>1st June 2024</span>
+          </div>
+          <!-- <p class="timeline_text" style="font-size: 14px;">Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero sapiente voluptas debitis dicta dolore.</p> -->
+        </section>
+      </div>
+      <div class="row row-2" data-aos="fade-left">
+        <section>
+          <i class="icon fas fa-star"></i>
+          <div class="details">
+            <span class="title">End Registrations</span>
+            <span>1st July 2024</span>
+          </div>
+          <!-- <p class="timeline_text" style="font-size: 14px;">Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero sapiente voluptas debitis dicta dolore.</p> -->
+        </section>
+      </div>
+      <div class="row row-1" data-aos="fade-right">
+        <section>
+          <i class="icon fas fa-rocket"></i>
+          <div class="details">
+            <span class="title">Opening Ceremony</span>
+            <span>13th July 2024</span>
+          </div>
+          <p class="timeline_text" style="font-size: 14px">
+            Hackathon opening ceremony will start 9:15 AM onwards.
+          </p>
+        </section>
+      </div>
+      <div class="row row-2" data-aos="fade-left">
+        <section>
+          <i class="icon fas fa-globe"></i>
+          <div class="details">
+            <span class="title">Hackathon Starts</span>
+            <span>13th July 2024</span>
+          </div>
+          <p class="timeline_text" style="font-size: 14px">
+            Hackathon coding period will start from 9:30 AM onwards.
+          </p>
+        </section>
+      </div>
+      <div class="row row-1" data-aos="fade-right">
+        <section>
+          <i class="icon fas fa-paper-plane"></i>
+          <div class="details">
+            <span class="title">Session from GeeksforGeeks</span>
+            <span>13th July 2024</span>
+          </div>
+          <p class="timeline_text" style="font-size: 14px">
+            Initial round of mentoring from 3:00 PM.
+          </p>
+        </section>
+      </div>
+      <div class="row row-2" data-aos="fade-left">
+        <section>
+          <i class="icon fas fa-paper-plane"></i>
+          <div class="details">
+            <span class="title">Commencement of the 1st Day</span>
+            <span>13th July 2024</span>
+          </div>
+          <p class="timeline_text" style="font-size: 14px">
+            Participants can begin their online coding session.
+          </p>
+        </section>
+      </div>
+      <div class="row row-1" data-aos="fade-right">
+        <section>
+          <i class="icon fas fa-paper-plane"></i>
+          <div class="details">
+            <span class="title">Offline Coding Starts for Day 2</span>
+            <span>14th July 2024</span>
+          </div>
+          <p class="timeline_text" style="font-size: 14px">
+            Offline coding can begin from 9:30 AM.
+          </p>
+        </section>
+      </div>
+      <div class="row row-2" data-aos="fade-left">
+        <section>
+          <i class="icon fas fa-paper-plane"></i>
+          <div class="details">
+            <span class="title">Final Round of Mentoring</span>
+            <span>14th July 2024</span>
+          </div>
+          <p class="timeline_text" style="font-size: 14px">
+            Final round of mentoring will start at 11:30 AM.
+          </p>
+        </section>
+      </div>
+      <div class="row row-1" data-aos="fade-right">
+        <section>
+          <i class="icon fas fa-globe"></i>
+          <div class="details">
+            <span class="title">Hackathon Ends</span>
+            <span>14th July 2024</span>
+          </div>
+          <p class="timeline_text" style="font-size: 14px">
+            Hackathon coding period will end on 3:00 PM.
+          </p>
+        </section>
+      </div>
+    </div>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger nexa" href="../register.html"
+        >Register</a
+      >
+    </li>
+    <!-- FAQ Section Start -->
+    <section id="faq" class="intro section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title-header text-center">
+              <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">
+                FAQs
+              </h2>
+              <!-- <p class="wow fadeInDown" data-wow-delay="0.2s">
+                Answers to the most frequently asked questions!
+              </p> -->
+            </div>
+          </div>
+        </div>
+        <div class="row intro-wrapper faq-grid">
+          <div class="single-intro-text">
+            <i class="lni-microphone"></i>
+            <h3>Who can participate?</h3>
+            <p>
+              The hackathon is open for Students from all over India. It is the
+              right place for anyone who's interested in learning and innovating
+              with their ideas.
+            </p>
+            <span class="count-number">01</span>
+          </div>
+          <div class="single-intro-text">
+            <i class="lni-users"></i>
+            <h3 class="ts-title">How much will it cost?</h3>
+            <p>Participation cost is 150 per individual</p>
+            <span class="count-number">02</span>
+          </div>
+          <div class="single-intro-text">
+            <i class="lni-bullhorn"></i>
+            <h3>How can I apply?</h3>
+            <p>
+              The registration would be simply done by just clicking the
+              register button on this website
+              <br />
+              Registrations end on 5th July 2024
+            </p>
+            <span class="count-number">03</span>
+          </div>
+          <div class="single-intro-text">
+            <i class="lni-heart"></i>
+            <h3>What if I don't know how to code?</h3>
+            <p>
+              No worries, Interest in learning and working with technology is
+              much more important than your current experience level.
+            </p>
+            <span class="count-number">04</span>
+          </div>
+          <div class="single-intro-text">
+            <i class="lni-cup"></i>
+            <h3>What are the prizes to be won?</h3>
+            <p>
+              We are going to announce some really exciting prizes and
+              incentives soon. Stay tuned for further updates!
+            </p>
+            <span class="count-number">05</span>
+          </div>
+          <div class="single-intro-text">
+            <i class="lni-gallery"></i>
+            <h3>Can we apply as a team?</h3>
+            <p>
+              Yes! You can form teams of 3-4 people. Most teams aim to have a
+              mix of people with both design and development skills.
+            </p>
+            <span class="count-number">06</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

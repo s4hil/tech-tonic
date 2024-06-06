@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Vision Xpo - Project Expo</title>
+  </head>
+  <style>
+    .nav-item {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+      margin-top: 20px;
+      color: #f7ff00;
+    }
+    .nav-link {
+      font-family: "nexa", sans-serif;
+      font-size: 2rem;
+      padding: 10px 20px;
+      background-color: #21545e;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: #0056b3;
+      color: #fff;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      background: url("background.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .header h1 {
+      font-size: 4rem;
+      background: linear-gradient(to right, #00f260, #0575e6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+
+    .header h2 {
+      ont-size: 2rem;
+      background: linear-gradient(to right, #f7ff00, #db36a4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 800px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+
+    section {
+      flex: 0 0 calc(60% - 10px);
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    section:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+      transform: translateY(0);
+    }
+
+    section:nth-child(odd) {
+      animation: slideInLeft 2s forwards;
+      margin-right: 20px;
+    }
+
+    section:nth-child(even) {
+      animation: slideInRight 2s forwards;
+      margin-left: 35%;
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    h2 {
+      font-size: 2rem;
+      background: linear-gradient(to right, #f7ff00, #db36a4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <a href="../index.html"
+        ><img src="images/logo.png" alt="Logo" id="logo"
+      /></a>
+      <header class="header">
+        <h1>Codify</h1>
+        <h2>The Coding Contest</h2>
+      </header>
+      <main class="main-content">
+        <section class="event-overview">
+          <h2>Event Overview</h2>
+          <ul>
+            <li><strong>Event Name:</strong> Codify</li>
+            <li><strong>Date:</strong> July 12th, 2024</li>
+            <li><strong>Duration:</strong> 3 hours (10:00 AM - 1:00 PM)</li>
+            <li>
+              <strong>Participants:</strong> Expected number of participants is
+              60
+            </li>
+            <li>
+              <strong>Platform:</strong> Coding challenges will be hosted on
+              platforms like HackerRank and LeetCode
+            </li>
+            <li><strong>Registration Fee:</strong> 50 INR per participant</li>
+            <li>
+              <strong>Venue:</strong> Computers will be provided at the contest
+              location
+            </li>
+          </ul>
+        </section>
+        <section class="contest-format">
+          <h2>Contest Format</h2>
+          <ul>
+            <li>
+              <strong>Individual Event:</strong> Codify is an individual
+              competition. Each participant will compete separately.
+            </li>
+            <li>
+              <strong>Problem Statements:</strong> The contest will include
+              problems of mixed difficulty levels.
+            </li>
+            <li>
+              <strong>Scoring:</strong> Participants will be scored based on the
+              points they earn on the coding platform.
+            </li>
+            <li>
+              <strong>Tie-breaking:</strong> In case of a tie, the winner will
+              be determined based on the time taken to complete the challenges.
+            </li>
+          </ul>
+        </section>
+        <section class="registration">
+          <h2>Registration</h2>
+          <ul>
+            <li><strong>Registration Fee:</strong> 50 INR per participant.</li>
+            <li>
+              <strong>Deadline:</strong> Participants must register before the
+              event date.
+            </li>
+          </ul>
+        </section>
+        <section class="contest-schedule">
+          <h2>Contest Schedule</h2>
+          <ul>
+            <li><strong>Start Time:</strong> 10:00 AM</li>
+            <li><strong>End Time:</strong> 1:00 PM</li>
+          </ul>
+        </section>
+        <section class="participation">
+          <h2>Participation</h2>
+          <ul>
+            <li>Each participant must register individually.</li>
+            <li>
+              Participants must be present at the venue at least 30 minutes
+              before the contest starts.
+            </li>
+          </ul>
+        </section>
+        <section class="scoring-ranking">
+          <h2>Scoring and Ranking</h2>
+          <ul>
+            <li>
+              Scores will be based on the points earned on the coding platform.
+            </li>
+            <li>
+              In case of a tie, the participant who completed the challenges in
+              the least amount of time will be ranked higher.
+            </li>
+          </ul>
+        </section>
+        <section class="prize-distribution">
+          <h2>Prize Distribution</h2>
+          <ul>
+            <li>Prizes will be awarded based on the final ranking.</li>
+            <li>
+              Winners will be announced at the end of the contest, and prizes
+              will be distributed accordingly.
+            </li>
+          </ul>
+        </section>
+
+        <section class="register">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger nexa" href="../register.html"
+              ><h2 class="nav-link js-scroll-trigger nexa" id="registerButton">
+                Register
+              </h2></a
+            >
+          </li>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

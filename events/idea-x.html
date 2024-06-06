@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <title>IdeaX - Tech Event</title>
+    <style>
+      body {
+        font-family: "Press Start 2P", cursive;
+        background-color: #121212;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1,
+      h2 {
+        text-align: center;
+        color: #00ff00;
+        text-shadow: 0 0 5px #2d522d, 0 0 10px #3e7b3e;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 20px;
+        margin: 0 auto;
+        max-width: 1200px;
+      }
+
+      .box {
+        background: #1e1e1e;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+      }
+
+      .nav-item {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        max-height: 75px;
+      }
+
+      .nav-link {
+        font-family: "Press Start 2P", cursive;
+        font-size: 1.2em;
+        padding: 10px 20px;
+        background-color: #00ff00;
+        color: #121212;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .nav-link:hover {
+        background-color: #009900;
+        color: #fff;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="../index.html"
+      ><img src="images/logo.png" alt="Logo" id="logo"
+    /></a>
+    <h1>Idea-X</h1>
+    <h2>The Ideathon</h2>
+
+    <div class="container">
+      <div class="box">
+        <h2>Event Overview</h2>
+        <p><strong>Date:</strong> July 13th, 2024</p>
+        <p>
+          <strong>Location:</strong> Dayananda Sagar Academy of Technology and
+          Management
+        </p>
+        <p><strong>Type:</strong> Offline</p>
+        <p><strong>Theme:</strong> Open theme</p>
+      </div>
+      <div class="box">
+        <h2>Registration Details</h2>
+        <p><strong>Fee:</strong> ₹100 per participant</p>
+        <p><strong>Team Size:</strong> 2-3 members</p>
+        <p><strong>Deadline:</strong> July 3rd, 2024</p>
+      </div>
+      <div class="box">
+        <h2>Pre-Event Submission</h2>
+        <p>
+          <strong>Requirement:</strong> Problem statement and proposed solution
+        </p>
+        <p><strong>Deadline:</strong> July 3rd, 2024</p>
+        <p><strong>Selection:</strong> Top 50 teams selected by judges</p>
+      </div>
+      <div class="box">
+        <h2>Event Schedule</h2>
+        <p><strong>Start:</strong> 9:30 AM</p>
+        <p><strong>End:</strong> 5:30 PM</p>
+        <p><strong>Duration:</strong> 7 hours</p>
+      </div>
+      <div class="box">
+        <h2>Participation Guidelines</h2>
+        <ul>
+          <li><strong>Team Formation:</strong> 2-3 members</li>
+          <li>
+            <strong>Submission:</strong> Brief on problem statement and solution
+          </li>
+          <li><strong>Selection:</strong> Top 50 teams</li>
+
+          <li>
+            <strong>Judging:</strong> Based on viability, innovation, and impact
+          </li>
+        </ul>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link js-scroll-trigger nexa" href="../register.html"
+          >Register</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

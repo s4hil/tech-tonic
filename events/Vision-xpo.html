@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Vision Xpo - Project Expo</title>
+  </head>
+  <style>
+    .nav-item {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+      margin-top: 20px;
+      color: #f7ff00;
+    }
+    .nav-link {
+      font-family: "nexa", sans-serif;
+      font-size: 2rem;
+      padding: 10px 20px;
+      background-color: #21545e;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: #0056b3;
+      color: #fff;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      background: url("background.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .header h1 {
+      font-size: 4rem;
+      background: linear-gradient(to right, #00f260, #0575e6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 800px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+
+    section {
+      flex: 0 0 calc(60% - 10px);
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    section:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+      transform: translateY(0);
+    }
+
+    section:nth-child(odd) {
+      animation: slideInLeft 2s forwards;
+      margin-right: 20px;
+    }
+
+    section:nth-child(even) {
+      animation: slideInRight 2s forwards;
+      margin-left: 35%;
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    h2 {
+      font-size: 2rem;
+      background: linear-gradient(to right, #f7ff00, #db36a4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <header class="header">
+        <a href="../index.html"
+          ><img src="images/logo.png" alt="Logo" id="logo"
+        /></a>
+        <h1>Vision Xpo</h1>
+      </header>
+      <main class="main-content">
+        <section class="event-overview">
+          <h2>Event Overview</h2>
+          <ul>
+            <li><strong>Event Name:</strong> Project expo</li>
+            <li><strong>Date:</strong> July 12th, 2024</li>
+            <li><strong>Duration:</strong> 4 hours (1:30 PM - 5:30 PM)</li>
+            <li><strong>Participants:</strong> Limited slots of 30 projects</li>
+            <li><strong>Registration Fee:</strong> None</li>
+            <li>
+              <strong>Venue:</strong> Dayananda Sagar Academy of Technology and
+              Management
+            </li>
+          </ul>
+        </section>
+        <section class="exhibition-details">
+          <h2>Exhibition Details</h2>
+          <p>
+            Participants can exhibit their innovative projects to the judges and
+            attendees. Each participant is expected to bring their project on
+            the day of the event and provide explanations to the judges. The
+            exhibition will showcase a variety of projects across different
+            domains.
+          </p>
+        </section>
+        <section class="contest-schedule">
+          <h2>Contest Schedule</h2>
+          <ul>
+            <li><strong>Date:</strong> July 12th, 2024</li>
+            <li><strong>Start Time:</strong> 1:30 PM</li>
+            <li><strong>End Time:</strong> 5:30 PM</li>
+          </ul>
+        </section>
+        <section class="judging-criteria">
+          <h2>Judging Criteria</h2>
+          <p>
+            Projects will be evaluated based on innovation, creativity,
+            functionality, and presentation. Judges will select the top three
+            projects based on their assessments.
+          </p>
+        </section>
+        <section class="participant-limit">
+          <h2>Participant Limit</h2>
+          <ul>
+            <li>Only 30 slots are available for project exhibition.</li>
+            <li>
+              Participants must secure their slots on a first-come, first-served
+              basis.
+            </li>
+          </ul>
+        </section>
+        <section class="prize-distribution">
+          <h2>Prize Distribution</h2>
+          <p>
+            Winners will be announced at the end of the exhibition. Prizes will
+            be awarded based on the judges' decisions.
+          </p>
+        </section>
+
+        <section class="register">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger nexa" href="../register.html"
+              ><h2 class="nav-link js-scroll-trigger nexa" id="registerButton">
+                Register
+              </h2></a
+            >
+          </li>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

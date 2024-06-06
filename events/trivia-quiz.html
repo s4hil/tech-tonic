@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Vision Xpo - Project Expo</title>
+  </head>
+  <style>
+    .nav-item {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+      margin-top: 20px;
+      color: #f7ff00;
+    }
+    .nav-link {
+      font-family: "nexa", sans-serif;
+      font-size: 2rem;
+      padding: 10px 20px;
+      background-color: #21545e;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: #0056b3;
+      color: #fff;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      background: url("background.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .header h1 {
+      font-size: 4rem;
+      background: linear-gradient(to right, #00f260, #0575e6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+
+    .header h2 {
+      ont-size: 2rem;
+      background: linear-gradient(to right, #f7ff00, #db36a4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 800px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+
+    section {
+      flex: 0 0 calc(60% - 10px);
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    section:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+      transform: translateY(0);
+    }
+
+    section:nth-child(odd) {
+      animation: slideInLeft 2s forwards;
+      margin-right: 20px;
+    }
+
+    section:nth-child(even) {
+      animation: slideInRight 2s forwards;
+      margin-left: 35%;
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    h2 {
+      font-size: 2rem;
+      background: linear-gradient(to right, #f7ff00, #db36a4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <a href="../index.html"
+        ><img src="images/logo.png" alt="Logo" id="logo"
+      /></a>
+      <header class="header">
+        <h1>Trivia Quiz</h1>
+      </header>
+      <main class="main-content">
+        <section class="event-overview">
+          <h2>Event Overview</h2>
+          <ul>
+            <li><strong>Event Name:</strong> Trivia Quiz</li>
+            <li>
+              <strong>Format:</strong> Team-based competition with teams of 3
+              members each
+            </li>
+            <li><strong>Date:</strong> July 12th, 2024</li>
+            <li><strong>Duration:</strong> 3 hours</li>
+            <li>
+              <strong>Participants:</strong> Expected number of teams is 30
+            </li>
+            <li><strong>Registration Fee:</strong> 150 INR per team</li>
+            <li>
+              <strong>Venue:</strong> Dayananda Sagar Academy of Technology and
+              Management
+            </li>
+          </ul>
+        </section>
+        <section class="contest-structure">
+          <h2>Contest Structure</h2>
+          <ul>
+            <li>
+              <strong>Rounds:</strong> The quiz will be conducted in multiple
+              rounds, with eliminations occurring after each round until three
+              winning teams are selected.
+            </li>
+            <li>
+              <strong>Topics:</strong> Questions will cover topics related to
+              the IT industry, latest technology, companies, and related fields.
+            </li>
+          </ul>
+        </section>
+        <section class="registration">
+          <h2>Registration</h2>
+          <ul>
+            <li>
+              <strong>Team Size:</strong> Each team must consist of 3 members.
+            </li>
+            <li><strong>Registration Fee:</strong> 150 INR per team.</li>
+            <li>
+              <strong>Deadline:</strong> Teams must register before the event
+              date.
+            </li>
+          </ul>
+        </section>
+        <section class="contest-schedule">
+          <h2>Contest Schedule</h2>
+          <ul>
+            <li><strong>Date:</strong> July 12th, 2024</li>
+            <li><strong>Start Time:</strong> 2:00 PM</li>
+            <li><strong>End Time:</strong> 5:00 PM</li>
+          </ul>
+        </section>
+        <section class="team-composition">
+          <h2>Team Composition</h2>
+          <ul>
+            <li>Each team must consist of exactly 3 members.</li>
+            <li>
+              Substitutions or changes in team composition are not allowed after
+              registration.
+            </li>
+          </ul>
+        </section>
+        <section class="scoring-ranking">
+          <h2>Scoring and Ranking</h2>
+          <ul>
+            <li>
+              Teams will be scored based on the number of correct answers.
+            </li>
+            <li>
+              In the case of ties, tie-breaking questions will be used to
+              determine the rankings.
+            </li>
+          </ul>
+        </section>
+
+        <section class="register">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger nexa" href="../register.html"
+              ><h2 class="nav-link js-scroll-trigger nexa" id="registerButton">
+                Register
+              </h2></a
+            >
+          </li>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
