@@ -338,24 +338,23 @@
 							</div>
 
 
-							<div class="border-box" data-aos="fade-up">
+							<div class="border-box aos-init aos-animate" data-aos="fade-up">
 								<div class="row justify-content-center no-gutters workshop-item">
 									<div class="col-lg-6 workshop-item-image">
 										<a href="events/Vision-xpo.html">
-										<img class="img-fluid" src="img/cards/visionxpo.jpg" alt="">
-									</a>
+											<img class="img-fluid" src="img/cards/visionxpo.jpg" alt="">
+										</a>
 									</div>
 									<div class="col-lg-6 workshop-item-textbox">
-										
 										<div class="bg-black text-center h-100 project">
 											<div class="d-flex h-100">
 												<div class="project-text w-100 my-auto text-center text-lg-left">
 													<h4 class="sub-heading inline orange">Vision <a class="white">Xpo</a></h4>
 													<a href="events/Vision-xpo.html">
-													<p class="mb-0 white nexa stats">
-														Vision Xpo is an innovative event that serves as a platform for participants to showcase their cutting-edge projects. This expo focuses on highlighting technological advancements and creative solutions.
-													</p>
-												</a>
+														<p class="mb-0 white nexa stats">
+															Vision Xpo is an innovative event that serves as a platform for participants to showcase their cutting-edge projects. This expo focuses on highlighting technological advancements and creative solutions.
+														</p>
+													</a>
 													<hr class="d-none d-lg-block mb-0 mr-0">
 												</div>
 											</div>
@@ -363,6 +362,7 @@
 									</div>
 								</div>
 							</div>
+							
 
 						</div> <!-- wrapper cards holder -->
 					</div>
@@ -716,7 +716,7 @@
 			}, 1000);
 
 			
-			$.ajax({
+			<!-- $.ajax({
 				url: GET_SLOT_DATA,
 				type: "GET",
 				dataType: "json",
@@ -745,7 +745,38 @@
 					console.log(err.responseText);
 				}
 
-			})
+			}) -->
+
+			$.ajax({
+				url: GET_SLOT_DATA,
+				type: "GET",
+				dataType: "json",
+				success: function (data) {
+					let events = data.data;
+					console.log(events);
+					events.forEach((event, index) => {
+						let slotsLeft = event.slots;
+						let fee = event.Fee;
+			
+						// Construct the stats HTML
+						let stats = `<div class='badges container-fluid badges mt-2'>
+										<div class='badge badge-primary mr-1'>Slots Left: ${slotsLeft}</div>
+										<div class='badge badge-success'>Reg. Fee: ${fee}</div>
+									 </div>`;
+			
+						// Create a span element and set its inner HTML
+						let statsHTML = document.createElement('span');
+						statsHTML.innerHTML = stats;
+			
+						// Append the statsHTML to the corresponding .stats element
+						$(".stats").eq(index).append(statsHTML);
+					});
+				},
+				error: function (err) {
+					console.log(err.responseText);
+				}
+			});
+			
 
 		</script>
 	<script src="//code.tidio.co/bs7ep9ewsq4mdmsb8eo7y5fihw1heoup.js" async></script>
