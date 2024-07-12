@@ -695,34 +695,34 @@
 				AOS.init();
 			});
 
-			setInterval(function () {
-				let endDate = new Date("12 July 2024 9:30 AM");
-				let now = new Date();
+			// setInterval(function () {
+			// 	let endDate = new Date("12 July 2024 9:30 AM");
+			// 	let now = new Date();
 
-				let diff = (endDate - now) / 1000;
-				let days = Math.floor(diff / 3600 / 24);
-				let hours = Math.floor(diff / 3600) % 24;
-				let mins = Math.floor(diff / 60) % 60;
-				let secs = Math.floor(diff) % 60;
+			// 	let diff = (endDate - now) / 1000;
+			// 	let days = Math.floor(diff / 3600 / 24);
+			// 	let hours = Math.floor(diff / 3600) % 24;
+			// 	let mins = Math.floor(diff / 60) % 60;
+			// 	let secs = Math.floor(diff) % 60;
 
-				const d = document;
-				const daysElement = d.querySelector('.days');
-				const hoursElement = d.querySelector('.hours');
-				const minutesElement = d.querySelector('.minutes');
-				const secondsElement = d.querySelector('.seconds');
+			// 	const d = document;
+			// 	const daysElement = d.querySelector('.days');
+			// 	const hoursElement = d.querySelector('.hours');
+			// 	const minutesElement = d.querySelector('.minutes');
+			// 	const secondsElement = d.querySelector('.seconds');
 
-				if (days == 0 && hours == 0 && mins == 0 && secs == 0) {
-					daysElement.textContent = "0";
-					hoursElement.textContent = "0";
-					minutesElement.textContent = "0";
-					secondsElement.textContent = "0";
-				}
+			// 	if (days == 0 && hours == 0 && mins == 0 && secs == 0) {
+			// 		daysElement.textContent = "0";
+			// 		hoursElement.textContent = "0";
+			// 		minutesElement.textContent = "0";
+			// 		secondsElement.textContent = "0";
+			// 	}
 
-				daysElement.textContent = days;
-				hoursElement.textContent = hours;
-				minutesElement.textContent = mins;
-				secondsElement.textContent = secs;
-			}, 1000);
+			// 	daysElement.textContent = days;
+			// 	hoursElement.textContent = hours;
+			// 	minutesElement.textContent = mins;
+			// 	secondsElement.textContent = secs;
+			// }, 1000);
 
 			
 			$.ajax({
